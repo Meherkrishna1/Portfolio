@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meher Krishna Bheri — Video Editor &amp; Creative Director</title>
+    <meta name="description" content="Meher Krishna Bheri is a professional video editor and creative director with 6+ years of experience. Worked with 50+ brands, companies and startups to create highly engaging content.">
+    <meta property="og:title" content="Meher Krishna Bheri — Video Editor &amp; Creative Director">
+    <meta property="og:description" content="Transforming raw footage into compelling stories. 6+ years of experience, 50+ brands served.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+
+
+
+    <!-- Main Section -->
+    <main>
+
+        <!-- ============================================
+             TIMELINE SCROLLYTELLING SECTION
+             ============================================ -->
+        <section id="timeline-section">
+
+            <!-- Loading screen -->
+            <div id="tl-loader">
+                <div class="tl-spinner-ring"></div>
+                <p class="tl-loader-text">Loading sequence<span class="tl-dots"></span></p>
+            </div>
+
+            <!-- The outer spacer drives scroll distance -->
+            <div class="timeline-scroll-spacer">
+                <div class="timeline-sticky-container">
+
+                    <!-- Canvas renders each frame -->
+                    <canvas id="timeline-canvas"></canvas>
+
+                    <!-- ── Hero Overlay · 0–30% · Full bottom panel ── -->
+                    <div class="tl-overlay tl-hero-overlay" id="tl-text-0">
+                        <div class="tl-hero-inner hero-container">
+                            <!-- Top row: name + description -->
+                            <div class="d-flex flex-column flex-md-row gspace-2 justify-content-between align-items-start align-items-md-center mb-0">
+                                <div class="home-title-container">
+                                    <h1 id="tl-beat-name">Meher Krishna Bheri</h1>
+                                    <p id="tl-beat-tagline" style="font-family: var(--font-family-2); font-size: 15px; color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; max-width: 420px;">Helping brands, creators, and businesses turn ideas into videos that drive engagement and growth</p>
+                                </div>
+                                <div class="home-avatar-container" id="tl-beat-desc">
+                                    <p>Transforming raw footage into compelling stories. Worked with 50+ Brands, companies and startups to create highly engaging content.</p>
+                                    <div class="d-flex flex-row flex-wrap align-items-center gspace-2 mt-3" id="tl-beat-badges">
+                                        <div class="banner-exp-badge">
+                                            <span class="banner-exp-number">6+</span>
+                                            <span class="banner-exp-label">Years of<br>Experience</span>
+                                        </div>
+                                        <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
+                                        <div class="banner-exp-badge">
+                                            <span class="banner-exp-number">50+</span>
+                                            <span class="banner-exp-label">Brands &<br>Companies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Divider -->
+                            <div class="home-divider" id="tl-beat-divider"></div>
+                            <!-- Bottom row: buttons + social -->
+                            <div class="d-flex flex-column flex-md-row gspace-2 w-100 align-items-center justify-content-between">
+                                <div class="d-flex flex-row flex-wrap gspace-2" id="tl-beat-btns">
+                                    <a href="#section-projects" class="btn btn-accent">
+                                        Video Portfolio
+                                        <i class="fa-solid fa-film ms-2"></i>
+                                    </a>
+                                    <a href="#contact-section" class="btn btn-outline-light rounded-0">
+                                        Get in Touch
+                                    </a>
+                                </div>
+                                <div class="d-flex flex-row flex-wrap gspace-2 align-items-center" id="tl-beat-social">
+                                    <a href="https://www.instagram.com/meher_onemark" class="social-icon social-icon--circle" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/" class="social-icon social-icon--circle" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="https://www.x.com/" class="social-icon social-icon--circle" target="_blank" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="https://www.youtube.com/" class="social-icon social-icon--circle" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Scroll hint -->
+                        <div class="tl-scroll-hint tl-hero-scroll-hint" id="tl-beat-hint">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="tl-progress-track">
+                        <div class="tl-progress-fill" id="tl-progress"></div>
+                    </div>
+
+                    <!-- Frame counter (dev hint, subtle) -->
+                    <div class="tl-frame-counter" id="tl-frame-counter"></div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Core Service Section -->
+        <div id="section-about"></div>
+        <section class="section-core-service">
+            <div class="hero-container overflow-visible">
+                <div class="d-flex flex-column gspace-5 position-relative">
+
+                    <div class="core-service-heading-container mb-5">
+                        <div class="core-heading-container position-relative">
+                            <h2 class="core-service-heading heading-fill position-relative z-2">
+                                Crafting visual stories that<br>captivate and engage audiences
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <!-- Description + Cards -->
+                    <div class="row position-relative z-2 gx-5 mt-4">
+                        <!-- Left Column: Cards 1 and 3 -->
+                        <div class="col-lg-5 col-md-6 d-flex flex-column gspace-4 mt-lg-5 pt-lg-4">
+                            <!-- Card 1 -->
+                            <div class="card card-core-service w-100">
+                                <img src="https://montra2.foxcreation.net/assets/images/Icon-7.png" alt="Creative Film Direction Icon" class="core-service-icon">
+                                <div class="d-flex flex-column gspace-2">
+                                    <h4>Creative Film Direction</h4>
+                                    <p class="text-center text-md-start">From scripting to shoot day, I direct and capture footage that matches your brand's story — no wasted shots, every frame deliberate.</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 (highlighted) -->
+                            <div class="card card-core-service highlight-core w-100">
+                                <img src="https://montra2.foxcreation.net/assets/images/Icon-3-1.png" alt="Expert Post Production Icon" class="core-service-icon">
+                                <div class="d-flex flex-column gspace-2">
+                                    <h4>Expert Post Production</h4>
+                                    <p class="text-center text-md-start">Color grading, sound mixing, VFX, pacing — I handle the full post-production pipeline with precision using Premiere Pro and After Effects.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Paragraph, Cards 2 and 4 -->
+                        <div class="col-lg-5 col-md-6 d-flex flex-column gspace-4">
+                            <div class="core-service-description w-100 mb-3 pe-lg-4">
+                                <p>
+                                    My expertise spans across multiple domains including Premiere Pro, After Effects, motion graphics, storytelling, and color correction. I specialize in transforming raw footage into compelling narratives that resonate with audiences and drive engagement.
+                                </p>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="card card-core-service w-100">
+                                <img src="https://montra2.foxcreation.net/assets/images/Icon-2-1.png" alt="Cinematic Visual Style Icon" class="core-service-icon">
+                                <div class="d-flex flex-column gspace-2">
+                                    <h4>Cinematic Visual Style</h4>
+                                    <p class="text-center text-md-start">Every project has a distinct visual language. I develop a cinematic style that makes your content instantly recognizable and scroll-stopping.</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="card card-core-service w-100">
+                                <img src="https://montra2.foxcreation.net/assets/images/Icon-4-1.png" alt="Global Project Reach Icon" class="core-service-icon">
+                                <div class="d-flex flex-column gspace-2">
+                                    <h4>Global Project Reach</h4>
+                                    <p class="text-center text-md-start">I've worked with brands and creators across India and internationally — delivering content that performs across YouTube, Instagram, and broadcast.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Floating Image -->
+                <div class="core-service-image">
+                    <img src="https://montra2.foxcreation.net/assets/images/young-guy-enjoying-taking-photos-3UJ8HB8.png" alt="Photographer working with camera" class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <div id="section-projects"></div>
+        <section class="section section-project bg-accent-color-5">
+            <div class="hero-container overflow-visible">
+                <div class="project-section-content">
+                    <div class="project-heading-container">
+                        <h2 class="project-section-heading">FEATURED<br>PROJECTS</h2>
+                    </div>
+
+                    <div class="project-content-container">
+                        <div class="row row-cols-lg-2 row-cols-1 g-4">
+                            <div class="col">
+                                <div class="d-flex flex-column gspace-2">
+                                    <div class="project-video-container project-video-container--tall">
+                                        <div class="project-video-bg" style="background-image: url('https://img.youtube.com/vi/Go8gUX_HZAY/maxresdefault.jpg')" id="video-bg-1"></div>
+                                        <div class="play-btn-wrapper">
+                                            <button class="request-loader" data-video="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" aria-label="Play Video"><i class="fa-solid fa-play"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row gspace-2 justify-content-between align-items-center flex-wrap w-100">
+                                        <h3 class="project-title"><a href="#">Urban Soul</a></h3>
+                                        <div class="d-flex flex-row gspace-1 align-items-center">
+                                            <span class="project-category">Music Category</span>
+                                            <a href="#" class="project-category">Music Video</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="d-flex flex-column gspace-2 justify-content-center align-items-center h-100">
+                                    <div class="project-video-container">
+                                        <div class="project-video-bg" style="background-image: url('https://img.youtube.com/vi/LqTk5IbBxgs/maxresdefault.jpg')" id="video-bg-2"></div>
+                                        <div class="play-btn-wrapper">
+                                            <button class="request-loader" data-video="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" aria-label="Play Video"><i class="fa-solid fa-play"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row gspace-2 justify-content-between align-items-center flex-wrap w-100">
+                                        <h3 class="project-title"><a href="#">Echoes of Fashion</a></h3>
+                                        <div class="d-flex flex-row gspace-1 align-items-center">
+                                            <a href="#" class="project-category">Commercial Add</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 w-100">
+                                <div class="d-flex flex-column gspace-2 justify-content-center align-items-center h-100 w-100">
+                                    <div class="project-video-container project-video-container--wide">
+                                        <div class="project-video-bg" style="background-image: url('https://img.youtube.com/vi/Np4EN8ZPMFU/maxresdefault.jpg')" id="video-bg-3"></div>
+                                        <div class="w-100 d-flex justify-content-center play-btn-wrapper">
+                                            <button class="request-loader" data-video="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" aria-label="Play Video"><i class="fa-solid fa-play"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row gspace-2 justify-content-between align-items-center flex-wrap w-100">
+                                        <h3 class="project-title"><a href="#">The Journey</a></h3>
+                                        <div class="d-flex flex-row gspace-1 align-items-center">
+                                            <a href="#" class="project-category">Travel Documentary</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="d-flex flex-column gspace-2 justify-content-center align-items-center h-100">
+                                    <div class="project-video-container">
+                                        <div class="project-video-bg" style="background-image: url('https://img.youtube.com/vi/DOeuljcKkTI/maxresdefault.jpg')" id="video-bg-4"></div>
+                                        <div class="play-btn-wrapper">
+                                            <button class="request-loader" data-video="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" aria-label="Play Video"><i class="fa-solid fa-play"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row gspace-2 justify-content-between align-items-center flex-wrap w-100">
+                                        <h3 class="project-title"><a href="#">Legacy</a></h3>
+                                        <div class="d-flex flex-row gspace-1 align-items-center">
+                                            <a href="#" class="project-category">Short Film</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="d-flex flex-column gspace-2">
+                                    <div class="project-video-container project-video-container--tall">
+                                        <div class="project-video-bg" style="background-image: url('https://img.youtube.com/vi/BCKMzk2rRKo/maxresdefault.jpg')" id="video-bg-5"></div>
+                                        <div class="play-btn-wrapper">
+                                            <button class="request-loader" data-video="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" aria-label="Play Video"><i class="fa-solid fa-play"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row gspace-2 justify-content-between align-items-center flex-wrap w-100">
+                                        <h3 class="project-title"><a href="#">Launch Bold</a></h3>
+                                        <div class="d-flex flex-row gspace-1 align-items-center">
+                                            <a href="#" class="project-category">Product Teaser</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Video Section -->
+        <div class="section p-0">
+            <div id="modal-overlay" class="modal-overlay">
+                <span class="my-close" id="modal-close-btn"><i class="fa-solid fa-xmark"></i></span>
+                <div class="my-modal">
+                    <iframe id="my-video-frame" allowfullscreen title="Video Player"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Section -->
+        <div id="section-services"></div>
+        <section class="section service-content-banner">
+            <div class="hero-container">
+                <div class="d-flex flex-column gspace-5">
+                    <div class="service-title-wrapper">
+                        <div class="service-title-heading">
+                            <h2>What I Do Best</h2>
+                        </div>
+                        <div class="service-title-description">
+                            <p>
+                                From cinematic storytelling to post-production mastery, discover how we bring your vision to life.
+                            </p>
+                        </div>
+                        <div class="service-title-cta">
+                            <a href="#" class="btn btn-accent">Explore All Services</a>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="serviceAccordion">
+                        <div class="accordion-item service-acc-1">
+                            <h2 class="accordion-header service-accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service1">
+                                    Video Production
+                                </button>
+                            </h2>
+                            <div id="service1" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                    <div class="service-content-container">
+                                        <div class="service-video-bg" id="service-video-1" style="background-image: url('https://img.youtube.com/vi/pVA0G01aDfk/maxresdefault.jpg')"></div>
+                                        <div class="service-video-content">
+                                            <div class="row row-cols-md-2 row-cols-1 g-3">
+                                                <div class="col col-md-9">
+                                                    <div class="d-flex flex-column-reverse flex-lg-row gspace-2 justify-content-between w-100">
+                                                        <div class="service-description-content">
+                                                            <p class="mb-0">We handle every step of the film production process from concept development, scripting, casting, location scouting, to on-set direction and cinematography.</p>
+                                                        </div>
+                                                        <div class="service-tag-container">
+                                                            <span class="service-tag">film production</span>
+                                                            <span class="service-tag">video shooting</span>
+                                                            <span class="service-tag">creative film studio</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-md-3">
+                                                    <div class="d-flex flex-column align-items-end justify-content-center h-100">
+                                                        <a href="#" class="btn btn-accent">View Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item service-acc-2">
+                            <h2 class="accordion-header service-accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service2">
+                                    Video Editing
+                                </button>
+                            </h2>
+                            <div id="service2" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                    <div class="service-content-container">
+                                        <div class="service-video-bg" id="service-video-2" style="background-image: url('https://img.youtube.com/vi/pVA0G01aDfk/maxresdefault.jpg')"></div>
+                                        <div class="service-video-content">
+                                            <div class="row row-cols-md-2 row-cols-1 g-3">
+                                                <div class="col col-md-9">
+                                                    <div class="d-flex flex-column-reverse flex-lg-row gspace-2 justify-content-between w-100">
+                                                        <div class="service-description-content">
+                                                            <p class="mb-0">With cutting-edge editing suites, we handle everything from rough cuts to final polish color grading, audio mixing, VFX, transitions, and pacing to deliver visually.</p>
+                                                        </div>
+                                                        <div class="service-tag-container">
+                                                            <span class="service-tag">video editing</span>
+                                                            <span class="service-tag">video shooting</span>
+                                                            <span class="service-tag">post-production studio</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-md-3">
+                                                    <div class="d-flex flex-column align-items-start align-items-md-end justify-content-center h-100">
+                                                        <a href="#" class="btn btn-accent">View Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item service-acc-3">
+                            <h2 class="accordion-header service-accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service3">
+                                    Script Writing
+                                </button>
+                            </h2>
+                            <div id="service3" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                    <div class="service-content-container">
+                                        <div class="service-video-bg" id="service-video-3" style="background-image: url('https://img.youtube.com/vi/pVA0G01aDfk/maxresdefault.jpg')"></div>
+                                        <div class="service-video-content">
+                                            <div class="row row-cols-md-2 row-cols-1 g-3">
+                                                <div class="col col-md-9">
+                                                    <div class="d-flex flex-column-reverse flex-lg-row gspace-2 justify-content-between w-100">
+                                                        <div class="service-description-content">
+                                                            <p class="mb-0">Every powerful video starts with a compelling script. Our writers and visual artists craft clear narratives and detailed storyboards to guide your production.</p>
+                                                        </div>
+                                                        <div class="service-tag-container">
+                                                            <span class="service-tag">script writing</span>
+                                                            <span class="service-tag">storyboard</span>
+                                                            <span class="service-tag">creative direction</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-md-3">
+                                                    <div class="d-flex flex-column align-items-start align-items-md-end justify-content-center h-100">
+                                                        <a href="#" class="btn btn-accent">View Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item service-acc-4">
+                            <h2 class="accordion-header service-accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service4">
+                                    Motion Graphics
+                                </button>
+                            </h2>
+                            <div id="service4" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                    <div class="service-content-container">
+                                        <div class="service-video-bg" id="service-video-4" style="background-image: url('https://img.youtube.com/vi/pVA0G01aDfk/maxresdefault.jpg')"></div>
+                                        <div class="service-video-content">
+                                            <div class="row row-cols-md-2 row-cols-1 g-3">
+                                                <div class="col col-md-9">
+                                                    <div class="d-flex flex-column-reverse flex-lg-row gspace-2 justify-content-between w-100">
+                                                        <div class="service-description-content">
+                                                            <p class="mb-0">Bring static elements to life. We design dynamic visual effects, title animations, logo transitions, and custom motion graphics to give your videos a high-end, premium feel.</p>
+                                                        </div>
+                                                        <div class="service-tag-container">
+                                                            <span class="service-tag">motion graphics</span>
+                                                            <span class="service-tag">after effects</span>
+                                                            <span class="service-tag">visual effects</span>
+                                                            <span class="service-tag">2d/3d animation</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-md-3">
+                                                    <div class="d-flex flex-column align-items-start align-items-md-end justify-content-center h-100">
+                                                        <a href="#" class="btn btn-accent">View Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item service-acc-5">
+                            <h2 class="accordion-header service-accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service5">
+                                    Sound Design
+                                </button>
+                            </h2>
+                            <div id="service5" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion">
+                                <div class="accordion-body">
+                                    <div class="service-content-container">
+                                        <div class="service-video-bg" id="service-video-5" style="background-image: url('https://img.youtube.com/vi/pVA0G01aDfk/maxresdefault.jpg')"></div>
+                                        <div class="service-video-content">
+                                            <div class="row row-cols-md-2 row-cols-1 g-3">
+                                                <div class="col col-md-9">
+                                                    <div class="d-flex flex-column-reverse flex-lg-row gspace-2 justify-content-between w-100">
+                                                        <div class="service-description-content">
+                                                            <p class="mb-0">Sound is 50% of the cinematic experience. We compose immersive soundscapes, edit crisp dialogue, perform precise foley work, and mix audio to deliver a rich, professional auditory impact.</p>
+                                                        </div>
+                                                        <div class="service-tag-container">
+                                                            <span class="service-tag">sound design</span>
+                                                            <span class="service-tag">audio mixing</span>
+                                                            <span class="service-tag">foley effects</span>
+                                                            <span class="service-tag">dialogue editing</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-md-3">
+                                                    <div class="d-flex flex-column align-items-start align-items-md-end justify-content-center h-100">
+                                                        <a href="#" class="btn btn-accent">View Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Testimonials Section -->
+        <section class="section testimonial-section position-relative overflow-hidden">
+            <div id="testimonial-video-background"></div>
+            <div class="testimonial-overlay"></div>
+            <div class="hero-container position-relative" style="z-index: 2;">
+                <div class="d-flex flex-column gspace-3">
+                    <div class="testimonial-heading-wrapper">
+                        <h2 class="section-title">What Clients Say</h2>
+                    </div>
+                    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+                        <div class="col">
+                            <div class="d-flex flex-column gspace-3">
+                                <div class="card card-testimonial">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <i class="fa-solid fa-quote-right testimonial-icon"></i>
+                                        <span class="testimonial-heading">FRAMEHAUS - Production</span>
+                                    </div>
+                                    <p>"Working with Meher was an extraordinary experience. He transformed our brand story into a visual masterpiece that speaks directly to our audience."</p>
+                                    <div class="d-flex flex-row gspace-2 align-items-center">
+                                        <div class="testimonial-image">
+                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-6.jpg" alt="Testimonial" class="img-fluid">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6>Alex Morrison</h6>
+                                            <p class="testimonial-designation">Framehaus Studio</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-testimonial">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <i class="fa-solid fa-quote-right testimonial-icon"></i>
+                                        <span class="testimonial-heading">Lumio - Creative Agency</span>
+                                    </div>
+                                    <p>"Meher delivered stunning work, showing clear attention to detail and an incredible ability to capture the message effectively."</p>
+                                    <div class="d-flex flex-row gspace-2 align-items-center">
+                                        <div class="testimonial-image">
+                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-5.jpg" alt="Testimonial" class="img-fluid">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6>Jamie Carter</h6>
+                                            <p class="testimonial-designation">Lumia Agency</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="d-flex flex-column flex-md-row flex-lg-column gspace-3">
+                                <div class="card card-testimonial">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <i class="fa-solid fa-quote-right testimonial-icon"></i>
+                                        <span class="testimonial-heading">Novax - Startup Accelerator</span>
+                                    </div>
+                                    <p>"Meher turned a complex script into a visually engaging production that not only met our vision, but also added layers of depth, story, and clarity we hadn't imagined."</p>
+                                    <div class="d-flex flex-row gspace-2 align-items-center">
+                                        <div class="testimonial-image">
+                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-13.jpg" alt="Testimonial" class="img-fluid">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6>Chloe Ramirez</h6>
+                                            <p class="testimonial-designation">Novax Media</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-testimonial">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <i class="fa-solid fa-quote-right testimonial-icon"></i>
+                                        <span class="testimonial-heading">ASTRAFILM - Indie Studio</span>
+                                    </div>
+                                    <p>"We chose Meher for his vision, and he brought our documentary to life with professionalism, artistry, and timely communication throughout."</p>
+                                    <div class="d-flex flex-row gspace-2 align-items-center">
+                                        <div class="testimonial-image">
+                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-12.jpg" alt="Testimonial" class="img-fluid">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6>David Foster</h6>
+                                            <p class="testimonial-designation">Astrafilm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="d-flex flex-column flex-md-row flex-lg-column gspace-3">
+                                <div class="card card-testimonial">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <i class="fa-solid fa-quote-right testimonial-icon"></i>
+                                        <span class="testimonial-heading">VELOCITY - Sports Brand</span>
+                                    </div>
+                                    <p>"Impressed by his dedication and storytelling. Meher crafted visuals that matched our goals and resonated strongly with our audience base."</p>
+                                    <div class="d-flex flex-row gspace-2 align-items-center">
+                                        <div class="testimonial-image">
+                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-6.jpg" alt="Testimonial" class="img-fluid">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6>Ethan Brooks</h6>
+                                            <p class="testimonial-designation">Velocity Creative</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-testimonial">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <i class="fa-solid fa-quote-right testimonial-icon"></i>
+                                        <span class="testimonial-heading">GRAVITAS - Tech Media Group</span>
+                                    </div>
+                                    <p>"Every shot, every transition, every frame — Meher brought cinematic brilliance with unmatched precision and style that made our brand shine."</p>
+                                    <div class="d-flex flex-row gspace-2 align-items-center">
+                                        <div class="testimonial-image">
+                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-1.jpg" alt="Testimonial" class="img-fluid">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6>Nicole Adams</h6>
+                                            <p class="testimonial-designation">Gravitas Media</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Section -->
+        <section class="section-cta-contact">
+            <div class="hero-container">
+                <div class="contact-cta-banner">
+                    <div class="contact-cta-title-container">
+                        <h2 class="contact-cta-title heading-fill">
+                            Let's Turn Your Vision Into Cinematic Reality
+                        </h2>
+
+                    </div>
+                    <div class="contact-cta-text-container">
+                        <p>
+                            From concept development to post-production, we craft cinematic experiences that captivate and inspire. Let's create something extraordinary together.
+                        </p>
+                        <div>
+                            <a href="#" class="btn btn-accent-primary">
+                                Free Consultation
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-cta-image">
+                        <img src="https://montra2.foxcreation.net/assets/images/envato-labs-image-edit-1-e1752829112223.png" alt="Contact CTA" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Partner Section -->
+        <section class="section-small">
+            <div class="hero-container overflow-hidden">
+                <div class="partners-container">
+                    <h5 class="partnership-title-content">
+                        Trusted by Industry Leaders &amp; Creative Brands
+                    </h5>
+                    <div class="overflow-hidden">
+                        <div class="swiper swiperpartner">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-6.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-7.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-5.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-1.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-2.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-6.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-7.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-5.png" alt="Partner" class="partner-image"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="section" id="contact-section">
+            <div class="hero-container">
+                <div class="row row-cols-lg-2 row-cols-1 g-4 mb-5 pb-lg-4">
+                    <div class="col">
+                        <div class="d-flex flex-row h-100">
+                            <div style="width: 4px; background-color: var(--accent-color); margin-right: 20px; align-self: stretch;"></div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <h2 class="contact-section-heading">Get in<br>Touch</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex align-items-center h-100">
+                            <p class="contact-section-desc mb-0">Ready to bring your vision to life? Let's discuss your project.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-lg-2 row-cols-1 g-5">
+                    <!-- Left Info Column -->
+                    <div class="col col-lg-5">
+                        <div class="d-flex flex-column gspace-4">
+                            <div class="d-flex flex-column">
+                                <span class="contact-info-label">Phone Number</span>
+                                <span class="contact-info-value">+91 95024 64891</span>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <span class="contact-info-label">Email Address</span>
+                                <span class="contact-info-value" style="text-transform: none; letter-spacing: normal;">meherkrishnabheri@gmail.com</span>
+                                <span class="mt-4" style="color: var(--text-color); font-size: 14px; line-height: 1.5; max-width: 300px;">Ready to discuss your next video project. Usually responds within 24 hours.</span>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <span class="contact-info-label mb-2">Social Media</span>
+                                <div class="d-flex flex-row gspace-2">
+                                    <a href="https://www.instagram.com/meher_onemark" target="_blank" class="social-icon contact-social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/" target="_blank" class="social-icon contact-social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="https://www.x.com/" target="_blank" class="social-icon contact-social-icon" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="https://www.youtube.com/" target="_blank" class="social-icon contact-social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Form Column -->
+                    <div class="col col-lg-7">
+                        <div class="contact-form-container">
+                            <h3>SEND US A MESSAGE</h3>
+                            <form id="contact-form" class="mt-4">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="fullName">Full Name</label>
+                                            <input type="text" class="form-control form-control-dark" id="fullName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="emailAddr">Email Address</label>
+                                            <input type="email" class="form-control form-control-dark" id="emailAddr" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="phoneNum">Phone Number</label>
+                                            <input type="tel" class="form-control form-control-dark" id="phoneNum">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="subject">Subject</label>
+                                            <input type="text" class="form-control form-control-dark" id="subject" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="projectType">Project Type</label>
+                                            <select class="form-select form-select-dark" id="projectType">
+                                                <option selected disabled>Select a service...</option>
+                                                <option value="video-editing">Video Editing</option>
+                                                <option value="video-production">Video Production</option>
+                                                <option value="motion-graphics">Motion Graphics</option>
+                                                <option value="color-grading">Color Grading</option>
+                                                <option value="sound-design">Sound Design</option>
+                                                <option value="social-content">Social Media Content</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea class="form-control form-control-dark" id="message" rows="5" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-5">
+                                        <button type="submit" class="btn btn-accent rounded-0 px-4 py-3 d-inline-flex align-items-center" style="font-size: 14px; font-weight: 700; text-transform: uppercase;">
+                                            Send Message <i class="fa-solid fa-circle-chevron-right ms-2 fs-5"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="section-footer">
+            <div class="hero-container">
+                <div class="footer-container">
+                    <div class="footer-title-container text-center w-100">
+                        <span class="footer-title">Meher Krishna</span>
+                    </div>
+                    <div class="footer-copyright-container">
+                        <a href="#" class="legallink text-decoration-none">Privacy Policy</a>
+                        <div class="d-flex flex-column align-items-center">
+                            <span class="copyright">© 2026 Meher Krishna. All Rights Reserved.</span>
+                            <span class="copyright mt-2 text-center" style="opacity: 0.8; letter-spacing: 0.5px;">Video Editor | Creative Director | Storyteller</span>
+                        </div>
+                        <a href="#" class="legallink text-decoration-none">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

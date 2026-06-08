@@ -1,0 +1,382 @@
+/* Responsive CSS - Montra Studio */
+
+/* Tablet (992px and below) */
+@media screen and (max-width: 991.98px) {
+
+    h2 { font-size: 60px; }
+    h3 { font-size: 36px; }
+    h4 { font-size: 24px; }
+    h5 { font-size: 18px; }
+    p  { font-size: 16px; }
+
+    .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-link-container {
+        display: none;
+    }
+
+    .navbar-cta-container {
+        display: none;
+    }
+
+    .section-core-service {
+        padding: 120px 20px 500px;
+    }
+
+    .section-cta-contact {
+        padding: 0 20px;
+    }
+
+    .section-small {
+        padding: 0 20px;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 14px;
+    }
+
+    .home-title-container {
+        width: 52%;
+    }
+
+    .home-avatar-container {
+        width: 46%;
+    }
+
+    .banner-home-video {
+        padding: 120px 20px 0;
+        min-height: 93vh;
+    }
+
+    .home-spacer {
+        width: 110px;
+        border: 8px solid var(--accent-color);
+    }
+
+    .home-spacer .spacer-inner {
+        height: 28px;
+    }
+
+    .card-trust-us .card-number-wrapper {
+        left: -35px;
+        width: 170px;
+        top: -25px;
+    }
+
+    .card-trust-us .card-number {
+        font-size: 150px;
+    }
+
+    .trust-us-stat {
+        font-size: 60px;
+    }
+
+    .stat-plus {
+        font-size: 44px;
+    }
+
+    .team-title-container {
+        position: relative;
+        top: auto;
+    }
+
+    .project-heading-container {
+        margin-bottom: -50px;
+    }
+
+    .project-section-heading {
+        font-size: 130px;
+    }
+
+    .project-title {
+        font-size: 28px;
+    }
+
+    .core-service-heading {
+        font-size: 54px;
+    }
+
+    .core-service-image {
+        left: 40px;
+        right: auto;
+        width: 58%;
+        top: auto;
+        bottom: -470px;
+        transform: none;
+    }
+
+    .accordion-item.service-acc-1 .service-accordion-header,
+    .accordion-item.service-acc-2 .service-accordion-header,
+    .accordion-item.service-acc-3 .service-accordion-header,
+    .accordion-item.service-acc-4 .service-accordion-header,
+    .accordion-item.service-acc-5 .service-accordion-header {
+        padding-left: 0 !important;
+    }
+
+    .service-accordion-header .accordion-button {
+        font-size: 28px;
+    }
+
+    .service-accordion-header .accordion-button::after {
+        font-size: 28px;
+    }
+
+    .contact-cta-banner {
+        padding: 60px 40px;
+    }
+
+    .contact-cta-title-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-cta-title {
+        font-size: 48px;
+    }
+
+    .contact-cta-text-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-cta-image {
+        display: none;
+    }
+
+    .trust-us-right-container {
+        padding-left: 0;
+    }
+
+    .trust-us-right-container h2 {
+        font-size: 50px;
+    }
+
+
+    .testimonial-section {
+        padding: 80px 20px;
+    }
+
+    .partner-image {
+        max-height: 45px;
+    }
+}
+
+/* Mobile (768px and below) */
+@media screen and (max-width: 767.98px) {
+
+    h2 { font-size: 40px; }
+    h3 { font-size: 28px; }
+    h4 { font-size: 20px; }
+
+    .section { padding: 80px 20px; }
+
+    .home-title-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-avatar-container {
+        width: 100%;
+        align-items: center;
+    }
+
+    .banner-home-video {
+        padding: 100px 16px 30px;
+        align-items: center;
+    }
+
+    .home-spacer {
+        width: 70px;
+        border: 6px solid var(--accent-color);
+    }
+
+    .home-spacer .spacer-inner {
+        height: 22px;
+    }
+
+    .home-divider {
+        margin: 20px 0;
+    }
+
+    .core-service-heading-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .core-service__circle-logo {
+        width: 100px;
+    }
+
+    .core-service-image {
+        display: none;
+    }
+
+    .section-core-service {
+        padding: 80px 20px;
+    }
+
+    .project-section-heading {
+        font-size: 70px;
+    }
+
+    .project-heading-container {
+        margin-bottom: -30px;
+    }
+
+    .project-video-container {
+        min-height: 220px;
+    }
+
+    .project-video-container--tall {
+        min-height: 320px;
+    }
+
+    .project-video-container--wide {
+        min-height: 220px;
+    }
+
+    .service-title-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .service-accordion-header .accordion-button {
+        font-size: 22px;
+        padding: 20px 0;
+    }
+
+    .service-accordion-header .accordion-button::after {
+        font-size: 22px;
+    }
+
+    .trust-us-right-container {
+        padding-left: 0;
+    }
+
+    .trust-us-right-container h2 {
+        font-size: 38px;
+    }
+
+    .trust-us-stat {
+        font-size: 50px;
+    }
+
+    .stat-plus {
+        font-size: 36px;
+    }
+
+    .contact-cta-banner {
+        padding: 50px 30px;
+        flex-direction: column;
+    }
+
+    .contact-cta-title {
+        font-size: 36px;
+    }
+
+    .contact-cta-title-container,
+    .contact-cta-text-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-info-value {
+        word-break: break-all;
+    }
+
+    .footer-title {
+        font-size: 70px;
+        margin-bottom: -20px;
+    }
+
+    .footer-copyright-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .form input {
+        border-right: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .my-modal {
+        width: 95vw;
+    }
+
+    .my-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .team-image {
+        height: 260px;
+    }
+
+    .blog-image {
+        height: 200px;
+    }
+
+    .partners-container {
+        padding: 40px 0;
+    }
+
+    .testimonial-icon {
+        font-size: 22px;
+    }
+
+    .section-footer {
+        padding: 80px 20px 20px;
+    }
+}
+
+/* Small mobile (480px and below) */
+@media screen and (max-width: 479.98px) {
+
+    h1 { font-size: 44px; }
+    h2 { font-size: 32px; }
+
+    .home-spacer {
+        width: 40px;
+        border: 8px solid var(--accent-color);
+    }
+
+    .home-spacer .spacer-inner {
+        height: 18px;
+    }
+
+    .footer-title {
+        font-size: 50px;
+        margin-bottom: -15px;
+    }
+
+    .project-section-heading {
+        font-size: 50px;
+    }
+
+    .card-trust-us {
+        gap: 60px;
+    }
+
+    .card-trust-us .card-number {
+        font-size: 100px;
+    }
+
+    .card-trust-us .card-number-wrapper {
+        left: -25px;
+        width: 120px;
+    }
+
+    .contact-cta-title {
+        font-size: 28px;
+    }
+}
