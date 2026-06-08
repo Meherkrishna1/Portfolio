@@ -2017,8 +2017,6 @@ img {
 .testimonial-rail {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     gap: 24px;
     padding: 20px 5vw;
     -webkit-overflow-scrolling: touch;
@@ -3051,7 +3049,7 @@ img { max-width: 100%; }
 .pf-btn, .social-icon { min-width: 48px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
 
 /* Carousel Touch Handling */
-.swiper-wrapper, .testimonial-rail { touch-action: pan-y; }
+.swiper-wrapper { touch-action: pan-y; }
 
 /* Performance Hints */
 .reveal { will-change: transform, opacity; }
