@@ -126,6 +126,42 @@
         font-size: 28px;
     }
 
+    /* Service section */
+    .svc-layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .svc-panel {
+        min-height: 420px;
+        position: relative;
+    }
+
+    .svc-panel__item {
+        position: relative;
+        display: none;
+    }
+
+    .svc-panel__item--active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .svc-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 40px;
+    }
+
+    .svc-header__right {
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+
+    .svc-item__name {
+        font-size: 40px;
+    }
+
     .contact-cta-banner {
         padding: 60px 40px;
     }
@@ -163,6 +199,21 @@
 
     .partner-image {
         max-height: 45px;
+    }
+
+    /* Portfolio Showcase */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+    }
+
+    .pf-btn {
+        flex-shrink: 0;
     }
 }
 
@@ -255,6 +306,19 @@
         font-size: 22px;
     }
 
+    /* Service section */
+    .svc-item__name {
+        font-size: 32px;
+    }
+
+    .svc-item__inner {
+        padding: 20px 16px;
+    }
+
+    .svc-panel__content {
+        padding: 28px 24px;
+    }
+
     .trust-us-right-container {
         padding-left: 0;
     }
@@ -336,6 +400,20 @@
 
     .section-footer {
         padding: 80px 20px 20px;
+    }
+
+    /* Portfolio Showcase */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-heading {
+        font-size: 48px;
+    }
+
+    .section-portfolio {
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 }
 

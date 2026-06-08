@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     initBackToTop();
     initSwiper();
     initNewsletterForm();
-    initProjectHeading();
     initContactForm();
+    initPortfolioFilter();
+    initServicePanel();
 });
 
 // ================================================
@@ -229,8 +230,8 @@ function animateCounter(el) {
 function initScrollReveal() {
     // Add reveal class to key elements
     const revealTargets = document.querySelectorAll(
-        '.card-trust-us, .card-testimonial, .team-container, ' +
-        '.project-video-container, .card-core-service, .accordion-item'
+        '.card-trust-us, .team-container, ' +
+        '.project-video-container, .card-core-service, .accordion-item, .swiper-testimonials'
     );
 
     revealTargets.forEach(function (el) {
@@ -261,6 +262,7 @@ function initScrollReveal() {
 function initSwiper() {
     if (typeof Swiper === 'undefined') return;
 
+    // Partners Carousel
     new Swiper('.swiperpartner', {
         slidesPerView: 'auto',
         spaceBetween: 60,
@@ -276,25 +278,38 @@ function initSwiper() {
             momentum: false
         },
         breakpoints: {
-            320: {
+            320: { slidesPerView: 2, spaceBetween: 30 },
+            576: { slidesPerView: 3, spaceBetween: 40 },
+            768: { slidesPerView: 4, spaceBetween: 50 },
+            992: { slidesPerView: 5, spaceBetween: 60 },
+            1200: { slidesPerView: 6, spaceBetween: 70 }
+        }
+    });
+
+    // Testimonials Carousel
+    new Swiper('.swiper-testimonials', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+        navigation: {
+            nextEl: '.testimonial-next',
+            prevEl: '.testimonial-prev',
+        },
+        breakpoints: {
+            768: {
                 slidesPerView: 2,
                 spaceBetween: 30
             },
-            576: {
+            1024: {
                 slidesPerView: 3,
-                spaceBetween: 40
-            },
-            768: {
-                slidesPerView: 4,
-                spaceBetween: 50
-            },
-            992: {
-                slidesPerView: 5,
-                spaceBetween: 60
-            },
-            1200: {
-                slidesPerView: 6,
-                spaceBetween: 70
+                spaceBetween: 30
             }
         }
     });
@@ -376,28 +391,7 @@ function initNewsletterForm() {
     });
 })();
 
-// ================================================
-// 14. Hide/Show Project Heading on Scroll
-// ================================================
 
-function initProjectHeading() {
-    const heading = document.querySelector('.project-section-heading');
-    if (!heading) return;
-
-    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    window.addEventListener('scroll', function () {
-        const currentScroll = window.scrollY || document.documentElement.scrollTop;
-
-        if (currentScroll > lastScrollTop) {
-            heading.classList.add('is-hidden');
-        } else {
-            heading.classList.remove('is-hidden');
-        }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    }, { passive: true });
-}
 
 // ================================================
 // 15. Contact Form Submission
@@ -639,5 +633,89 @@ function initTimelineScrollytelling() {
         if (loader) loader.classList.add('tl-hidden');
         drawFrame(0);
         onScroll(); // sync overlays to current scroll position
+    });
+}
+
+// ================================================
+// 17. Portfolio Showcase Filter
+// ================================================
+
+function initPortfolioFilter() {
+    var filtersWrap = document.getElementById('portfolio-filters');
+    var grid        = document.getElementById('portfolio-grid');
+    if (!filtersWrap || !grid) return;
+
+    var btns  = filtersWrap.querySelectorAll('.pf-btn');
+    var cards = grid.querySelectorAll('.portfolio-card');
+
+    // Inject the keyframe animation into the document once
+    if (!document.getElementById('pf-keyframes')) {
+        var style = document.createElement('style');
+        style.id = 'pf-keyframes';
+        style.textContent = '@keyframes portfolioFadeIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }';
+        document.head.appendChild(style);
+    }
+
+    btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var filter = this.getAttribute('data-filter');
+
+            // Update active button
+            btns.forEach(function (b) { b.classList.remove('pf-btn--active'); });
+            this.classList.add('pf-btn--active');
+
+            // Filter cards with a fade animation
+            var delay = 0;
+            cards.forEach(function (card) {
+                var cat = card.getAttribute('data-category');
+                if (filter === 'all' || cat === filter) {
+                    card.classList.remove('is-hidden');
+                    card.style.animationDelay = delay + 'ms';
+                    card.style.animation = 'none';
+                    void card.offsetWidth; // reflow
+                    card.style.animation = 'portfolioFadeIn 420ms ease forwards';
+                    delay += 60;
+                } else {
+                    card.classList.add('is-hidden');
+                }
+            });
+        });
+    });
+}
+
+// ================================================
+// 18. Service Panel — Hover/Click Interaction
+// ================================================
+
+function initServicePanel() {
+    var list   = document.getElementById('svc-list');
+    var panel  = document.getElementById('svc-panel');
+    if (!list || !panel) return;
+
+    var items  = list.querySelectorAll('.svc-item');
+    var panels = panel.querySelectorAll('.svc-panel__item');
+
+    var isMobile = window.matchMedia('(max-width: 991.98px)').matches;
+
+    function activate(id) {
+        items.forEach(function (item) {
+            item.classList.toggle('svc-item--active', item.getAttribute('data-svc') === id);
+        });
+        panels.forEach(function (p) {
+            p.classList.toggle('svc-panel__item--active', p.getAttribute('data-panel') === id);
+        });
+    }
+
+    items.forEach(function (item) {
+        // Desktop: hover
+        item.addEventListener('mouseenter', function () {
+            if (!window.matchMedia('(max-width: 991.98px)').matches) {
+                activate(this.getAttribute('data-svc'));
+            }
+        });
+        // Mobile + Desktop: click/tap
+        item.addEventListener('click', function () {
+            activate(this.getAttribute('data-svc'));
+        });
     });
 }
