@@ -59,19 +59,24 @@
                             <div class="d-flex flex-column flex-md-row gspace-2 justify-content-between align-items-start align-items-md-center mb-0">
                                 <div class="home-title-container">
                                     <h1 id="tl-beat-name">Meher Krishna Bheri</h1>
-                                    <p id="tl-beat-tagline" style="font-family: var(--font-family-2); font-size: 15px; color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; max-width: 420px;">Helping brands, creators, and businesses turn ideas into videos that drive engagement and growth</p>
+                                    <p id="tl-beat-tagline" style="font-family: var(--font-family-2); font-size: 15px; color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; max-width: 420px;">Turning Ideas Into Visual Stories That Engage, Inspire & Convert</p>
                                 </div>
                                 <div class="home-avatar-container" id="tl-beat-desc">
                                     <p>Transforming raw footage into compelling stories. Worked with 50+ Brands, companies and startups to create highly engaging content.</p>
                                     <div class="d-flex flex-row flex-wrap align-items-center gspace-2 mt-3" id="tl-beat-badges">
                                         <div class="banner-exp-badge">
                                             <span class="banner-exp-number">6+</span>
-                                            <span class="banner-exp-label">Years of<br>Experience</span>
+                                            <span class="banner-exp-label">Years<br>Experience</span>
+                                        </div>
+                                        <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
+                                        <div class="banner-exp-badge">
+                                            <span class="banner-exp-number">100+</span>
+                                            <span class="banner-exp-label">Projects<br>Delivered</span>
                                         </div>
                                         <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
                                         <div class="banner-exp-badge">
                                             <span class="banner-exp-number">50+</span>
-                                            <span class="banner-exp-label">Brands &<br>Companies</span>
+                                            <span class="banner-exp-label">Brands &<br>Creators</span>
                                         </div>
                                     </div>
                                 </div>
@@ -135,57 +140,71 @@
                         </div>
                     </div>
 
-                    <!-- Description + Stats in Old Grid Style -->
+                    <!-- 2-column layout: Stats grid left, Biography right -->
                     <div class="row position-relative z-2 gx-5 mt-4">
-                        <!-- Left Column: Cards 1 and 3 -->
-                        <div class="col-lg-5 col-md-6 d-flex flex-column gspace-4 mt-lg-5 pt-lg-4">
-                            <!-- Stat 1 -->
-                            <div class="card card-core-service w-100">
-                                <div class="d-flex flex-column gspace-2 text-center text-md-start">
-                                    <h3 style="font-size: clamp(3rem, 5vw, 4.5rem); color: var(--accent-color); margin-bottom: 0;">100+</h3>
-                                    <h4 style="font-size: 1.2rem; margin-top: 5px; margin-bottom: 0; color: var(--primary);">Projects Delivered</h4>
+                        <!-- Left Column: 2x2 Stat Grid -->
+                        <div class="col-lg-5 col-md-6 d-flex flex-column gspace-4 mt-lg-4">
+                            <div class="row g-3">
+                                <!-- Stat 1 -->
+                                <div class="col-6">
+                                    <div class="card card-core-service w-100 reveal" style="--reveal-delay: 0ms">
+                                        <div class="d-flex flex-column gspace-1">
+                                            <h3 style="font-size: clamp(1.8rem, 8vw, 3.8rem); color: var(--accent-color); margin-bottom: 0;">
+                                                <span data-count="100">0</span>+
+                                            </h3>
+                                            <h4 style="font-size: 0.95rem; margin-top: 4px; margin-bottom: 0; color: var(--primary); letter-spacing: 0.5px;">Projects Delivered</h4>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- Stat 3 (highlighted) -->
-                            <div class="card card-core-service highlight-core w-100">
-                                <div class="d-flex flex-column gspace-2 text-center text-md-start">
-                                    <h3 style="font-size: clamp(3rem, 5vw, 4.5rem); color: var(--primary); margin-bottom: 0;">6+</h3>
-                                    <h4 style="font-size: 1.2rem; margin-top: 5px; margin-bottom: 0; color: var(--primary);">Years Experience</h4>
+                                <!-- Stat 2 -->
+                                <div class="col-6">
+                                    <div class="card card-core-service w-100 reveal" style="--reveal-delay: 100ms">
+                                        <div class="d-flex flex-column gspace-1">
+                                            <h3 style="font-size: clamp(1.8rem, 8vw, 3.8rem); color: var(--primary); margin-bottom: 0;">
+                                                <span data-count="50">0</span>+
+                                            </h3>
+                                            <h4 style="font-size: 0.95rem; margin-top: 4px; margin-bottom: 0; color: var(--primary); letter-spacing: 0.5px;">Brands & Creators</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Stat 3 (highlighted) -->
+                                <div class="col-6">
+                                    <div class="card card-core-service highlight-core w-100 reveal" style="--reveal-delay: 200ms">
+                                        <div class="d-flex flex-column gspace-1">
+                                            <h3 style="font-size: clamp(1.8rem, 8vw, 3.8rem); color: var(--primary); margin-bottom: 0;">
+                                                <span data-count="6">0</span>+
+                                            </h3>
+                                            <h4 style="font-size: 0.95rem; margin-top: 4px; margin-bottom: 0; color: var(--primary); letter-spacing: 0.5px;">Years Experience</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Stat 4 -->
+                                <div class="col-6">
+                                    <div class="card card-core-service w-100 reveal" style="--reveal-delay: 300ms">
+                                        <div class="d-flex flex-column gspace-1">
+                                            <h3 style="font-size: clamp(2.4rem, 4vw, 3.8rem); color: var(--accent-color); margin-bottom: 0;">
+                                                <span data-count="100">0</span>+
+                                            </h3>
+                                            <h4 style="font-size: 0.95rem; margin-top: 4px; margin-bottom: 0; color: var(--primary); letter-spacing: 0.5px;">Happy Clients</h4>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Right Column: Paragraph, Cards 2 and 4 -->
+                        <!-- Right Column: Biography -->
                         <div class="col-lg-5 col-md-6 d-flex flex-column gspace-4">
                             <div class="core-service-description w-100 mb-3 pe-lg-4">
-                                <h3 style="color: var(--primary); text-transform: uppercase;">My Professional Journey</h3>
-                                <div class="about-text-content d-flex flex-column gspace-3">
-                                    <p>
-                                        I am Meher Krishna Bheri, a passionate video editor and creative director dedicated to translating ideas into visually stunning cinematic experiences. For over 6 years, I have honed my craft, focusing on the intersection of storytelling and technical precision.
+                                <h3 style="color: var(--primary); text-transform: uppercase; margin-bottom: 28px;">My Professional Journey</h3>
+                                    <p class="reveal" style="--reveal-delay: 80ms; line-height: 1.85; border-left: 2px solid rgba(229,9,20,0.4); padding-left: 16px;">
+                                        I am Meher Krishna Bheri, a video editor and creative director. Every project starts with a story. Whether it's a brand film, YouTube documentary, commercial campaign, or social media content, my goal is simple: create visuals that capture attention and leave a lasting impression.
                                     </p>
-                                    <p>
-                                        My creative philosophy is simple: <strong style="color: var(--primary); font-weight: 500;">Every frame must serve a purpose.</strong> Whether I'm editing a fast-paced commercial, a deep-dive documentary, or a scroll-stopping social media campaign, I believe in meticulous attention to detail, intentional pacing, and powerful sound design.
+                                    <p class="reveal" style="--reveal-delay: 180ms; line-height: 1.85;">
+                                        I take a story-first approach to creative problem solving. By deeply understanding a brand's core communication goals, I craft narratives that resonate. It's never just about cutting footage — it's about finding the right pacing, the perfect moment of tension, and the emotional hook that drives audience engagement.
                                     </p>
-                                    <p>
-                                        I don't just cut clips together; I build narratives. My approach involves understanding the brand's core message and utilizing dynamic motion graphics, expert color grading, and immersive audio mixing to create videos that don't just look good—they make an impact and drive tangible results.
+                                    <p class="reveal" style="--reveal-delay: 280ms; line-height: 1.85;">
+                                        Ultimately, my work is designed for long-term impact. I collaborate with brands, creators, and businesses to build visual experiences that don't just look cinematic, but actively connect with viewers, communicate ideas clearly, and deliver meaningful results.
                                     </p>
-                                </div>
-                            </div>
-
-                            <!-- Stat 2 -->
-                            <div class="card card-core-service w-100">
-                                <div class="d-flex flex-column gspace-2 text-center text-md-start">
-                                    <h3 style="font-size: clamp(3rem, 5vw, 4.5rem); color: var(--primary); margin-bottom: 0;">50+</h3>
-                                    <h4 style="font-size: 1.2rem; margin-top: 5px; margin-bottom: 0; color: var(--primary);">Brands & Creators</h4>
-                                </div>
-                            </div>
-
-                            <!-- Stat 4 -->
-                            <div class="card card-core-service w-100">
-                                <div class="d-flex flex-column gspace-2 text-center text-md-start">
-                                    <h3 style="font-size: clamp(3rem, 5vw, 4.5rem); color: var(--accent-color); margin-bottom: 0;">20M+</h3>
-                                    <h4 style="font-size: 1.2rem; margin-top: 5px; margin-bottom: 0; color: var(--primary);">Combined Views</h4>
                                 </div>
                             </div>
                         </div>
@@ -194,7 +213,7 @@
 
                 <!-- Right Floating Image -->
                 <div class="core-service-image">
-                    <img src="https://montra2.foxcreation.net/assets/images/young-guy-enjoying-taking-photos-3UJ8HB8.png" alt="Photographer working with camera" class="img-fluid">
+                    <img loading="lazy" src="https://montra2.foxcreation.net/assets/images/young-guy-enjoying-taking-photos-3UJ8HB8.png" alt="Photographer working with camera" class="img-fluid">
                 </div>
             </div>
         </section>
@@ -233,20 +252,20 @@
                         <div class="portfolio-card__thumb">
                             <div class="portfolio-card__bg" style="background-image: url('https://img.youtube.com/vi/Go8gUX_HZAY/maxresdefault.jpg')"></div>
                             <div class="portfolio-card__overlay">
-                                <a href="#" class="portfolio-card__play" aria-label="View Project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <a href="javascript:void(0)" class="portfolio-card__play" aria-label="View Project">
+                                    <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
                             <span class="portfolio-card__tag">Brand &amp; Commercial</span>
                         </div>
                         <div class="portfolio-card__body">
                             <h4 class="portfolio-card__title">Burger N Beast Launch Campaign</h4>
-                            <p class="portfolio-card__desc">Commercial video campaign focused on product storytelling and social media engagement. High-energy cuts, appetite-driven visuals and bold motion typography.</p>
+                            <p class="portfolio-card__desc">A high-energy commercial campaign designed to evoke appetite and drive immediate social media engagement through fast-paced, bold visual storytelling.</p>
                             <div class="portfolio-card__footer">
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> Product Commercial
                                 </span>
-                                <a href="#" class="portfolio-card__link" aria-label="View Project">
+                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
                                     View Project <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -258,20 +277,20 @@
                         <div class="portfolio-card__thumb">
                             <div class="portfolio-card__bg" style="background-image: url('https://img.youtube.com/vi/LqTk5IbBxgs/maxresdefault.jpg')"></div>
                             <div class="portfolio-card__overlay">
-                                <a href="#" class="portfolio-card__play" aria-label="View Project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <a href="javascript:void(0)" class="portfolio-card__play" aria-label="View Project">
+                                    <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
                             <span class="portfolio-card__tag">Real Estate</span>
                         </div>
                         <div class="portfolio-card__body">
                             <h4 class="portfolio-card__title">Elevate Realty — Luxury Property Showcase</h4>
-                            <p class="portfolio-card__desc">Cinematic walkthrough of a high-end residential property. Drone sweeps, golden-hour grading and smooth transitions crafted to convert premium buyers.</p>
+                            <p class="portfolio-card__desc">A premium property showcase crafted to immerse potential buyers in the atmosphere and luxury of the space, turning a simple walkthrough into an aspirational experience.</p>
                             <div class="portfolio-card__footer">
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> Property Film
                                 </span>
-                                <a href="#" class="portfolio-card__link" aria-label="View Project">
+                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
                                     View Project <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -283,20 +302,20 @@
                         <div class="portfolio-card__thumb">
                             <div class="portfolio-card__bg" style="background-image: url('https://img.youtube.com/vi/Np4EN8ZPMFU/maxresdefault.jpg')"></div>
                             <div class="portfolio-card__overlay">
-                                <a href="#" class="portfolio-card__play" aria-label="View Project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <a href="javascript:void(0)" class="portfolio-card__play" aria-label="View Project">
+                                    <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
                             <span class="portfolio-card__tag">Travel &amp; Cinematic</span>
                         </div>
                         <div class="portfolio-card__body">
                             <h4 class="portfolio-card__title">The Wandering Frame — Rajasthan</h4>
-                            <p class="portfolio-card__desc">A cinematic travel documentary capturing the textures, colours and culture of Rajasthan. Immersive soundscape and careful colour science create a poetic visual journey.</p>
+                            <p class="portfolio-card__desc">Cinematic storytelling designed to capture the atmosphere, emotion, and experience of exploration across Rajasthan.</p>
                             <div class="portfolio-card__footer">
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> Travel Documentary
                                 </span>
-                                <a href="#" class="portfolio-card__link" aria-label="View Project">
+                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
                                     View Project <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -308,20 +327,20 @@
                         <div class="portfolio-card__thumb">
                             <div class="portfolio-card__bg" style="background-image: url('https://img.youtube.com/vi/DOeuljcKkTI/maxresdefault.jpg')"></div>
                             <div class="portfolio-card__overlay">
-                                <a href="#" class="portfolio-card__play" aria-label="View Project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <a href="javascript:void(0)" class="portfolio-card__play" aria-label="View Project">
+                                    <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
                             <span class="portfolio-card__tag">Corporate &amp; Business</span>
                         </div>
                         <div class="portfolio-card__body">
                             <h4 class="portfolio-card__title">TechVision — Annual Report Film</h4>
-                            <p class="portfolio-card__desc">Corporate brand film synthesising a year of growth through interviews, motion-graphic data visualisations and on-brand colour grading for a SaaS company's investor deck.</p>
+                            <p class="portfolio-card__desc">A corporate brand film designed to synthesise a year of growth into a compelling, visually engaging narrative that builds investor confidence and brand trust.</p>
                             <div class="portfolio-card__footer">
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> Corporate Brand Film
                                 </span>
-                                <a href="#" class="portfolio-card__link" aria-label="View Project">
+                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
                                     View Project <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -333,20 +352,20 @@
                         <div class="portfolio-card__thumb">
                             <div class="portfolio-card__bg" style="background-image: url('https://img.youtube.com/vi/BCKMzk2rRKo/maxresdefault.jpg')"></div>
                             <div class="portfolio-card__overlay">
-                                <a href="#" class="portfolio-card__play" aria-label="View Project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <a href="javascript:void(0)" class="portfolio-card__play" aria-label="View Project">
+                                    <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
                             <span class="portfolio-card__tag">Creator &amp; Influencer</span>
                         </div>
                         <div class="portfolio-card__body">
                             <h4 class="portfolio-card__title">Aarav Vlogs — Channel Rebrand</h4>
-                            <p class="portfolio-card__desc">Complete YouTube channel identity overhaul including custom intros, motion-graphic lower-thirds, transition packs and edited long-form vlogs scaled to 200k subscribers.</p>
+                            <p class="portfolio-card__desc">A complete channel rebrand and content strategy designed to elevate the creator's storytelling, strengthen audience connection, and dramatically scale viewership.</p>
                             <div class="portfolio-card__footer">
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> YouTube Editing
                                 </span>
-                                <a href="#" class="portfolio-card__link" aria-label="View Project">
+                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
                                     View Project <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -358,20 +377,20 @@
                         <div class="portfolio-card__thumb">
                             <div class="portfolio-card__bg" style="background-image: url('https://img.youtube.com/vi/pVA0G01aDfk/maxresdefault.jpg')"></div>
                             <div class="portfolio-card__overlay">
-                                <a href="#" class="portfolio-card__play" aria-label="View Project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <a href="javascript:void(0)" class="portfolio-card__play" aria-label="View Project">
+                                    <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
                             <span class="portfolio-card__tag">YouTube &amp; Documentary</span>
                         </div>
                         <div class="portfolio-card__body">
                             <h4 class="portfolio-card__title">Decoded — India's AI Revolution</h4>
-                            <p class="portfolio-card__desc">Long-form YouTube documentary exploring India's AI ecosystem. Multi-location interviews, kinetic typography, archival footage integration and studio-grade audio mix.</p>
+                            <p class="portfolio-card__desc">An in-depth documentary exploring complex technological shifts through a human lens, designed to educate, engage, and retain viewers through powerful narrative structure.</p>
                             <div class="portfolio-card__footer">
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> YouTube Documentary
                                 </span>
-                                <a href="#" class="portfolio-card__link" aria-label="View Project">
+                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
                                     View Project <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -483,9 +502,9 @@
 
                         <!-- Panel 1 -->
                         <div class="svc-panel__item svc-panel__item--active" data-panel="1">
-                            <div class="svc-panel__bg" style="background-image: url('https://img.youtube.com/vi/pVA0G01aDfk/maxresdefault.jpg')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_video_production_1780930808933.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">End-to-end video creation — from concept development and on-location shooting to final delivery. Every frame is intentional, every cut purposeful.</p>
+                                <p class="svc-panel__desc">Creating compelling visual content that brings ideas, brands and stories to life.</p>
                                 <ul class="svc-panel__capabilities">
                                     <li><i class="fa-solid fa-circle-dot"></i> Commercial Videos</li>
                                     <li><i class="fa-solid fa-circle-dot"></i> Brand Films</li>
@@ -498,9 +517,9 @@
 
                         <!-- Panel 2 -->
                         <div class="svc-panel__item" data-panel="2">
-                            <div class="svc-panel__bg" style="background-image: url('https://img.youtube.com/vi/LqTk5IbBxgs/maxresdefault.jpg')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_video_editing_1780930822667.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Precision editing that transforms raw footage into compelling stories. From rough cut to polished final — colour-graded, paced and ready to perform.</p>
+                                <p class="svc-panel__desc">Transforming raw footage into engaging stories that keep audiences watching.</p>
                                 <ul class="svc-panel__capabilities">
                                     <li><i class="fa-solid fa-circle-dot"></i> YouTube Videos</li>
                                     <li><i class="fa-solid fa-circle-dot"></i> Documentary Edits</li>
@@ -513,9 +532,9 @@
 
                         <!-- Panel 3 -->
                         <div class="svc-panel__item" data-panel="3">
-                            <div class="svc-panel__bg" style="background-image: url('https://img.youtube.com/vi/Np4EN8ZPMFU/maxresdefault.jpg')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_script_writing_1780930836210.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Every great video starts with a great script. I craft clear, resonant narratives that align with your brand voice and drive audience action.</p>
+                                <p class="svc-panel__desc">Building strong narratives that connect with viewers and communicate ideas clearly.</p>
                                 <ul class="svc-panel__capabilities">
                                     <li><i class="fa-solid fa-circle-dot"></i> Brand Storytelling</li>
                                     <li><i class="fa-solid fa-circle-dot"></i> Commercial Concepts</li>
@@ -528,9 +547,9 @@
 
                         <!-- Panel 4 -->
                         <div class="svc-panel__item" data-panel="4">
-                            <div class="svc-panel__bg" style="background-image: url('https://img.youtube.com/vi/BCKMzk2rRKo/maxresdefault.jpg')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_motion_graphics_1780930849220.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Kinetic typography, animated titles, and seamless visual effects that elevate your video from good to unforgettable. Crafted in After Effects.</p>
+                                <p class="svc-panel__desc">Enhancing visual storytelling through animation, motion design and creative visuals.</p>
                                 <ul class="svc-panel__capabilities">
                                     <li><i class="fa-solid fa-circle-dot"></i> Titles &amp; Lower Thirds</li>
                                     <li><i class="fa-solid fa-circle-dot"></i> Animated Explainers</li>
@@ -543,9 +562,9 @@
 
                         <!-- Panel 5 -->
                         <div class="svc-panel__item" data-panel="5">
-                            <div class="svc-panel__bg" style="background-image: url('https://img.youtube.com/vi/DOeuljcKkTI/maxresdefault.jpg')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_sound_design_1780930862756.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Sound is 50% of the cinematic experience. I craft immersive audio landscapes that make your visuals hit harder — from cleanup to final master.</p>
+                                <p class="svc-panel__desc">Crafting immersive audio experiences that elevate every frame and strengthen impact.</p>
                                 <ul class="svc-panel__capabilities">
                                     <li><i class="fa-solid fa-circle-dot"></i> Audio Cleanup</li>
                                     <li><i class="fa-solid fa-circle-dot"></i> Sound Effects</li>
@@ -567,26 +586,25 @@
 
         <!-- Testimonials Section -->
         <section class="section testimonial-section position-relative overflow-hidden">
-            <div id="testimonial-video-background"></div>
-            <div class="testimonial-overlay"></div>
             <div class="hero-container position-relative" style="z-index: 2;">
                 <div class="d-flex flex-column gspace-3">
                     <div class="testimonial-heading-wrapper">
                         <h2 class="section-title">What Clients Say</h2>
                     </div>
-                    <div class="swiper swiper-testimonials overflow-visible">
-                        <div class="swiper-wrapper">
+                    <div class="testimonial-rail-container">
+                        <div class="testimonial-rail" id="testimonial-rail">
+                            
                             <!-- Card 1 -->
-                            <div class="swiper-slide">
-                                <div class="card card-testimonial h-100">
+                            <div class="testimonial-card-wrap">
+                                <div class="card card-testimonial">
                                     <div class="d-flex flex-row align-items-center">
                                         <i class="fa-solid fa-quote-right testimonial-icon"></i>
                                         <span class="testimonial-heading">FRAMEHAUS - Production</span>
                                     </div>
-                                    <p>"Working with Meher was an extraordinary experience. He transformed our brand story into a visual masterpiece that speaks directly to our audience."</p>
+                                    <p>"Meher elevated our brand documentary beyond our expectations. His story-first approach and incredible attention to pacing resulted in a 40% increase in our audience retention."</p>
                                     <div class="d-flex flex-row gspace-2 align-items-center mt-auto pt-3">
                                         <div class="testimonial-image">
-                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-6.jpg" alt="Testimonial" class="img-fluid">
+                                            <img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Photo-6.jpg" alt="Testimonial" class="img-fluid">
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6>Alex Morrison</h6>
@@ -597,16 +615,16 @@
                             </div>
                             
                             <!-- Card 2 -->
-                            <div class="swiper-slide">
-                                <div class="card card-testimonial h-100">
+                            <div class="testimonial-card-wrap">
+                                <div class="card card-testimonial">
                                     <div class="d-flex flex-row align-items-center">
                                         <i class="fa-solid fa-quote-right testimonial-icon"></i>
                                         <span class="testimonial-heading">Lumio - Creative Agency</span>
                                     </div>
-                                    <p>"Meher delivered stunning work, showing clear attention to detail and an incredible ability to capture the message effectively."</p>
+                                    <p>"A true creative collaborator. Meher took our raw commercial footage and sculpted it into a highly engaging, conversion-driven campaign that perfectly communicated our brand vision."</p>
                                     <div class="d-flex flex-row gspace-2 align-items-center mt-auto pt-3">
                                         <div class="testimonial-image">
-                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-5.jpg" alt="Testimonial" class="img-fluid">
+                                            <img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Photo-5.jpg" alt="Testimonial" class="img-fluid">
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6>Sarah Jenkins</h6>
@@ -617,16 +635,16 @@
                             </div>
                             
                             <!-- Card 3 -->
-                            <div class="swiper-slide">
-                                <div class="card card-testimonial h-100">
+                            <div class="testimonial-card-wrap">
+                                <div class="card card-testimonial">
                                     <div class="d-flex flex-row align-items-center">
                                         <i class="fa-solid fa-quote-right testimonial-icon"></i>
                                         <span class="testimonial-heading">NEXUS - Creative Agency</span>
                                     </div>
-                                    <p>"From concept to the final export, the communication was top-notch and the quality of the video editing completely exceeded our expectations."</p>
+                                    <p>"We trusted Meher with our product launch, and he delivered a cinematic masterpiece. His sound design and motion graphics brought a level of premium polish we hadn't seen before."</p>
                                     <div class="d-flex flex-row gspace-2 align-items-center mt-auto pt-3">
                                         <div class="testimonial-image">
-                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-11.jpg" alt="Testimonial" class="img-fluid">
+                                            <img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Photo-11.jpg" alt="Testimonial" class="img-fluid">
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6>Jamie Carter</h6>
@@ -637,16 +655,16 @@
                             </div>
                             
                             <!-- Card 4 -->
-                            <div class="swiper-slide">
-                                <div class="card card-testimonial h-100">
+                            <div class="testimonial-card-wrap">
+                                <div class="card card-testimonial">
                                     <div class="d-flex flex-row align-items-center">
                                         <i class="fa-solid fa-quote-right testimonial-icon"></i>
                                         <span class="testimonial-heading">Novax - Startup Accelerator</span>
                                     </div>
-                                    <p>"Meher turned a complex script into a visually engaging production that not only met our vision, but also added layers of depth, story, and clarity we hadn't imagined."</p>
+                                    <p>"What sets Meher apart is his understanding of narrative. He didn't just edit our corporate film; he found the emotional core of the story and made our message resonate deeply with investors."</p>
                                     <div class="d-flex flex-row gspace-2 align-items-center mt-auto pt-3">
                                         <div class="testimonial-image">
-                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-13.jpg" alt="Testimonial" class="img-fluid">
+                                            <img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Photo-13.jpg" alt="Testimonial" class="img-fluid">
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6>Chloe Ramirez</h6>
@@ -657,16 +675,16 @@
                             </div>
                             
                             <!-- Card 5 -->
-                            <div class="swiper-slide">
-                                <div class="card card-testimonial h-100">
+                            <div class="testimonial-card-wrap">
+                                <div class="card card-testimonial">
                                     <div class="d-flex flex-row align-items-center">
                                         <i class="fa-solid fa-quote-right testimonial-icon"></i>
                                         <span class="testimonial-heading">ASTRAFILM - Indie Studio</span>
                                     </div>
-                                    <p>"We chose Meher for his vision, and he brought our documentary to life with professionalism, artistry, and timely communication throughout."</p>
+                                    <p>"An absolute professional. Meher's visual storytelling on our indie documentary was phenomenal, seamlessly blending complex interviews with powerful cinematic B-roll."</p>
                                     <div class="d-flex flex-row gspace-2 align-items-center mt-auto pt-3">
                                         <div class="testimonial-image">
-                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-12.jpg" alt="Testimonial" class="img-fluid">
+                                            <img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Photo-12.jpg" alt="Testimonial" class="img-fluid">
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6>David Foster</h6>
@@ -677,16 +695,16 @@
                             </div>
                             
                             <!-- Card 6 -->
-                            <div class="swiper-slide">
-                                <div class="card card-testimonial h-100">
+                            <div class="testimonial-card-wrap">
+                                <div class="card card-testimonial">
                                     <div class="d-flex flex-row align-items-center">
                                         <i class="fa-solid fa-quote-right testimonial-icon"></i>
                                         <span class="testimonial-heading">VELOCITY - Sports Brand</span>
                                     </div>
-                                    <p>"Impressed by his dedication and storytelling. Meher crafted visuals that matched our goals and resonated strongly with our audience base."</p>
+                                    <p>"Meher completely transformed our YouTube channel's visual identity. The quality of his edits and his understanding of audience engagement helped us cross the 100k subscriber mark."</p>
                                     <div class="d-flex flex-row gspace-2 align-items-center mt-auto pt-3">
                                         <div class="testimonial-image">
-                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-6.jpg" alt="Testimonial" class="img-fluid">
+                                            <img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Photo-6.jpg" alt="Testimonial" class="img-fluid">
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6>Ethan Brooks</h6>
@@ -695,64 +713,14 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Card 7 -->
-                            <div class="swiper-slide">
-                                <div class="card card-testimonial h-100">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <i class="fa-solid fa-quote-right testimonial-icon"></i>
-                                        <span class="testimonial-heading">GRAVITAS - Tech Media Group</span>
-                                    </div>
-                                    <p>"Every shot, every transition, every frame — Meher brought cinematic brilliance with unmatched precision and style that made our brand shine."</p>
-                                    <div class="d-flex flex-row gspace-2 align-items-center mt-auto pt-3">
-                                        <div class="testimonial-image">
-                                            <img src="https://montra2.foxcreation.net/assets/images/Photo-1.jpg" alt="Testimonial" class="img-fluid">
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <h6>Nicole Adams</h6>
-                                            <p class="testimonial-designation">Gravitas Media</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Testimonial Navigation -->
-                        <div class="testimonial-nav">
-                            <div class="swiper-button-prev testimonial-prev"><i class="fa-solid fa-arrow-left"></i></div>
-                            <div class="swiper-button-next testimonial-next"><i class="fa-solid fa-arrow-right"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact CTA Section -->
-        <section class="section-cta-contact">
-            <div class="hero-container">
-                <div class="contact-cta-banner">
-                    <div class="contact-cta-title-container">
-                        <h2 class="contact-cta-title heading-fill">
-                            Let's Turn Your Vision Into Cinematic Reality
-                        </h2>
 
-                    </div>
-                    <div class="contact-cta-text-container">
-                        <p>
-                            From concept development to post-production, we craft cinematic experiences that captivate and inspire. Let's create something extraordinary together.
-                        </p>
-                        <div>
-                            <a href="#" class="btn btn-accent-primary">
-                                Free Consultation
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contact-cta-image">
-                        <img src="https://montra2.foxcreation.net/assets/images/envato-labs-image-edit-1-e1752829112223.png" alt="Contact CTA" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
         <!-- Partner Section -->
@@ -765,14 +733,14 @@
                     <div class="overflow-hidden">
                         <div class="swiper swiperpartner">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-6.png" alt="Partner" class="partner-image"></div>
-                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-7.png" alt="Partner" class="partner-image"></div>
-                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-5.png" alt="Partner" class="partner-image"></div>
-                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-1.png" alt="Partner" class="partner-image"></div>
-                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-2.png" alt="Partner" class="partner-image"></div>
-                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-6.png" alt="Partner" class="partner-image"></div>
-                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-7.png" alt="Partner" class="partner-image"></div>
-                                <div class="swiper-slide"><img src="https://montra2.foxcreation.net/assets/images/Client-5.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Client-6.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Client-7.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Client-5.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Client-1.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Client-2.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Client-6.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Client-7.png" alt="Partner" class="partner-image"></div>
+                                <div class="swiper-slide"><img loading="lazy" src="https://montra2.foxcreation.net/assets/images/Client-5.png" alt="Partner" class="partner-image"></div>
                             </div>
                         </div>
                     </div>
@@ -793,7 +761,7 @@
                     </div>
                     <div class="col">
                         <div class="d-flex align-items-center h-100">
-                            <p class="contact-section-desc mb-0">Ready to bring your vision to life? Let's discuss your project.</p>
+                            <p class="contact-section-desc mb-0">Have a project in mind? Whether you're a brand, business, creator or agency, I'd love to hear about it.</p>
                         </div>
                     </div>
                 </div>
@@ -903,12 +871,12 @@
                         <span class="footer-title">Meher Krishna</span>
                     </div>
                     <div class="footer-copyright-container">
-                        <a href="#" class="legallink text-decoration-none">Privacy Policy</a>
+                        <a href="javascript:void(0)" class="legallink text-decoration-none">Privacy Policy</a>
                         <div class="d-flex flex-column align-items-center">
                             <span class="copyright">© 2026 Meher Krishna Bheri. All Rights Reserved. • Crafted by <a href="https://onemark.co.in" target="_blank" class="onemark-link">OneMark</a>.</span>
-                            <span class="copyright mt-2 text-center" style="opacity: 0.8; letter-spacing: 0.5px;">Video Editor | Creative Director | Storyteller</span>
+                            <span class="copyright mt-2 text-center" style="opacity: 0.8; letter-spacing: 0.5px;">Video Editor • Creative Director • Storyteller</span>
                         </div>
-                        <a href="#" class="legallink text-decoration-none">Terms & Conditions</a>
+                        <a href="javascript:void(0)" class="legallink text-decoration-none">Terms & Conditions</a>
                     </div>
                 </div>
             </div>

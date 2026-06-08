@@ -3,6 +3,8 @@
 /* Tablet (992px and below) */
 @media screen and (max-width: 991.98px) {
 
+    :root { --section-pad: 100px; }
+
     h2 { font-size: 60px; }
     h3 { font-size: 36px; }
     h4 { font-size: 24px; }
@@ -24,7 +26,7 @@
     }
 
     .section-core-service {
-        padding: 120px 20px 500px;
+        padding: 100px 20px 80px;
     }
 
     .section-cta-contact {
@@ -194,7 +196,7 @@
 
 
     .testimonial-section {
-        padding: 80px 20px;
+        padding: 100px 20px;
     }
 
     .partner-image {
@@ -220,11 +222,13 @@
 /* Mobile (768px and below) */
 @media screen and (max-width: 767.98px) {
 
+    :root { --section-pad: 80px; }
+
     h2 { font-size: 40px; }
     h3 { font-size: 28px; }
     h4 { font-size: 20px; }
 
-    .section { padding: 80px 20px; }
+    .section { padding: var(--section-pad) 20px; }
 
     .home-title-container {
         width: 100%;
@@ -234,6 +238,7 @@
     .home-avatar-container {
         width: 100%;
         align-items: center;
+        justify-content: center;
     }
 
     .banner-home-video {
@@ -269,6 +274,11 @@
 
     .section-core-service {
         padding: 80px 20px;
+    }
+
+    .card-core-service {
+        padding: 24px 16px;
+        min-height: 120px;
     }
 
     .project-section-heading {
@@ -348,9 +358,11 @@
     .contact-cta-text-container {
         flex: 0 0 100%;
         max-width: 100%;
+        margin-top: 0;
     }
 
     .contact-info-value {
+        font-size: 18px;
         word-break: break-all;
     }
 
@@ -414,6 +426,133 @@
     .section-portfolio {
         padding-top: 80px;
         padding-bottom: 80px;
+    }
+
+    /* =========================================
+       USER REQUESTED MOBILE OVERRIDES 
+       ========================================= */
+
+    .container, .hero-container {
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 8vw, 4rem);
+        line-height: 1.1;
+        word-break: break-word;
+    }
+
+    h2 {
+        font-size: clamp(1.75rem, 7vw, 3rem);
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+
+    /* 3. About & Statistics Section */
+    .card-core-service {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* 4. Services Section */
+    .svc-panel, .svc-layout {
+        height: auto !important;
+        min-height: unset !important;
+    }
+    
+    .svc-item__name {
+        font-size: 2rem !important;
+        line-height: 1.1;
+    }
+
+    /* 5. Testimonials Section */
+    .testimonial-card {
+        width: 85vw !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+        padding: 24px !important;
+        scroll-snap-align: center;
+    }
+    .testimonial-rail {
+        scroll-snap-type: x mandatory;
+    }
+
+    /* 6. Trusted Brands / Logo Section */
+    .partners-container {
+        padding: 40px 20px !important;
+        border-radius: 30px 0 30px 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .partnership-title-content {
+        margin-bottom: 30px !important;
+    }
+    .swiperpartner {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .swiperpartner .swiper-wrapper {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+        transform: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .swiperpartner .swiper-slide {
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box !important;
+    }
+    .partner-image {
+        max-width: 100%;
+        height: auto !important;
+        max-height: 50px !important;
+        object-fit: contain;
+    }
+
+    /* 7. Contact Section */
+    .contact-section-heading {
+        font-size: clamp(2rem, 10vw, 4rem) !important;
+    }
+    .contact-section-desc, .contact-info-value {
+        word-break: break-word;
+    }
+    #contact-section {
+        padding: 40px 20px;
+    }
+
+    /* 8. Footer Section */
+    .section-footer {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 40px 20px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-title {
+        font-size: clamp(2rem, 10vw, 3.5rem) !important;
+        line-height: 1;
+        margin-bottom: 20px !important;
+    }
+
+    /* 9. Floating Action / Back To Top */
+    #back-to-top {
+        bottom: calc(20px + env(safe-area-inset-bottom)) !important;
+        right: 20px !important;
+        z-index: 9999;
     }
 }
 

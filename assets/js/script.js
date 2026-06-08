@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollReveal();
     initBackToTop();
     initSwiper();
+    initTestimonialRail();
     initNewsletterForm();
     initContactForm();
     initPortfolioFilter();
@@ -33,7 +34,6 @@ function initYouTubeAPI() {
 
 window.onYouTubeIframeAPIReady = function () {
     initBannerVideo();
-    initTestimonialVideo();
 };
 
 // ================================================
@@ -73,42 +73,7 @@ function initBannerVideo() {
     });
 }
 
-// ================================================
-// 3. Testimonial Background Video
-// ================================================
 
-function initTestimonialVideo() {
-    const el = document.getElementById('testimonial-video-background');
-    if (!el) return;
-
-    new YT.Player('testimonial-video-background', {
-        videoId: '6J1XlyCxtPw',
-        playerVars: {
-            autoplay: 1,
-            controls: 0,
-            mute: 1,
-            loop: 1,
-            playlist: '6J1XlyCxtPw',
-            rel: 0,
-            modestbranding: 1,
-            iv_load_policy: 3,
-            showinfo: 0,
-            origin: window.location.origin,
-            enablejsapi: 1
-        },
-        events: {
-            onReady: function (e) {
-                e.target.mute();
-                e.target.playVideo();
-            },
-            onStateChange: function (e) {
-                if (e.data === YT.PlayerState.ENDED) {
-                    e.target.playVideo();
-                }
-            }
-        }
-    });
-}
 
 // ================================================
 // 4. Back to Top Button
@@ -228,14 +193,38 @@ function animateCounter(el) {
 // ================================================
 
 function initScrollReveal() {
-    // Add reveal class to key elements
+    // Elements that get auto-reveal (without inline reveal class already set)
     const revealTargets = document.querySelectorAll(
         '.card-trust-us, .team-container, ' +
-        '.project-video-container, .card-core-service, .accordion-item, .swiper-testimonials'
+        '.project-video-container, .accordion-item, ' +
+        '.portfolio-card, .contact-form-container'
     );
 
     revealTargets.forEach(function (el) {
-        el.classList.add('reveal');
+        if (!el.classList.contains('reveal')) {
+            el.classList.add('reveal');
+        }
+    });
+
+    // All reveal elements (including those already classed in HTML)
+    const allReveal = document.querySelectorAll('.reveal');
+
+    // Apply nth-child stagger per parent group
+    var parentGroups = {};
+    allReveal.forEach(function (el) {
+        var parent = el.parentElement;
+        var key = parent ? (parent.className || parent.tagName) : 'root';
+        if (!parentGroups[key]) parentGroups[key] = [];
+        parentGroups[key].push(el);
+    });
+
+    Object.values(parentGroups).forEach(function (group) {
+        group.forEach(function (el, i) {
+            // Only apply auto-stagger if no inline --reveal-delay is already set
+            if (!el.style.getPropertyValue('--reveal-delay')) {
+                el.style.setProperty('--reveal-delay', (i * 80) + 'ms');
+            }
+        });
     });
 
     const observer = new IntersectionObserver(function (entries) {
@@ -246,11 +235,11 @@ function initScrollReveal() {
             }
         });
     }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.07,
+        rootMargin: '0px 0px -30px 0px'
     });
 
-    revealTargets.forEach(function (el) {
+    allReveal.forEach(function (el) {
         observer.observe(el);
     });
 }
@@ -263,56 +252,36 @@ function initSwiper() {
     if (typeof Swiper === 'undefined') return;
 
     // Partners Carousel
-    new Swiper('.swiperpartner', {
-        slidesPerView: 'auto',
-        spaceBetween: 60,
-        loop: true,
-        speed: 3000,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false
-        },
-        freeMode: {
-            enabled: true,
-            momentum: false
-        },
-        breakpoints: {
-            320: { slidesPerView: 2, spaceBetween: 30 },
-            576: { slidesPerView: 3, spaceBetween: 40 },
-            768: { slidesPerView: 4, spaceBetween: 50 },
-            992: { slidesPerView: 5, spaceBetween: 60 },
-            1200: { slidesPerView: 6, spaceBetween: 70 }
+    try {
+        if (document.querySelector('.swiperpartner')) {
+            new Swiper('.swiperpartner', {
+                slidesPerView: 'auto',
+                spaceBetween: 60,
+                loop: true,
+                speed: 3000,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false
+                },
+                freeMode: {
+                    enabled: true,
+                    momentum: false
+                },
+                breakpoints: {
+                    320: { slidesPerView: 2, spaceBetween: 30 },
+                    576: { slidesPerView: 3, spaceBetween: 40 },
+                    768: { slidesPerView: 4, spaceBetween: 50 },
+                    992: { slidesPerView: 5, spaceBetween: 60 },
+                    1200: { slidesPerView: 6, spaceBetween: 70 }
+                }
+            });
         }
-    });
+    } catch (e) {
+        console.error("Swiper partner error:", e);
+    }
 
-    // Testimonials Carousel
-    new Swiper('.swiper-testimonials', {
-        slidesPerView: 1,
-        spaceBetween: 24,
-        loop: true,
-        speed: 800,
-        grabCursor: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-        },
-        navigation: {
-            nextEl: '.testimonial-next',
-            prevEl: '.testimonial-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            }
-        }
-    });
+
 }
 
 // ================================================
@@ -717,5 +686,71 @@ function initServicePanel() {
         item.addEventListener('click', function () {
             activate(this.getAttribute('data-svc'));
         });
+    });
+}
+
+// ================================================
+// 19. Horizontal Testimonial Rail
+// ================================================
+
+function initTestimonialRail() {
+    const rail = document.getElementById('testimonial-rail');
+    if (!rail) return;
+
+    const cards = rail.querySelectorAll('.testimonial-card-wrap');
+    if (!cards.length) return;
+
+    // 1. Intersection Observer for Active State (Center of viewport)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cards.forEach(c => c.classList.remove('is-active'));
+                entry.target.classList.add('is-active');
+            }
+        });
+    }, {
+        root: rail,
+        rootMargin: '0px -49% 0px -49%', // Triggers exactly when crossing the center
+        threshold: 0
+    });
+
+    cards.forEach(card => observer.observe(card));
+
+    // 2. Mouse Drag to Scroll
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    rail.addEventListener('mousedown', (e) => {
+        isDown = true;
+        rail.classList.add('is-dragging');
+        startX = e.pageX - rail.offsetLeft;
+        scrollLeft = rail.scrollLeft;
+    });
+
+    rail.addEventListener('mouseleave', () => {
+        isDown = false;
+        rail.classList.remove('is-dragging');
+    });
+
+    rail.addEventListener('mouseup', () => {
+        isDown = false;
+        rail.classList.remove('is-dragging');
+    });
+
+    rail.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - rail.offsetLeft;
+        const walk = (x - startX) * 2; // 2x speed for smoother feel
+        rail.scrollLeft = scrollLeft - walk;
+    });
+
+    // 3. Mouse Wheel to Scroll horizontally
+    rail.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            rail.scrollLeft += e.deltaY;
+        }
     });
 }
