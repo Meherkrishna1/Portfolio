@@ -3060,3 +3060,113 @@ img { max-width: 100%; }
         /* Hover states only apply to pointer devices — prevents sticky hover on mobile tap */
     }
 }
+
+/* ========================================================== */
+/* SECTION: ABOUT ME (REDESIGN)                               */
+/* ========================================================== */
+
+.section-about-me {
+    background-color: var(--dark-bg, #0a0a0a);
+}
+
+/* Image styling */
+.about-image-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Subtle Red Glow */
+.about-image-glow {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(229,9,20,0.2) 0%, rgba(229,9,20,0) 70%);
+    filter: blur(40px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-portrait {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    object-fit: contain;
+    /* Soft blend edge using mask-image */
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    transition: transform 0.5s ease;
+}
+
+/* Slight Parallax/Hover on Desktop */
+@media (min-width: 992px) {
+    .about-image-wrapper:hover .about-portrait {
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+.about-p {
+    line-height: 1.6;
+    color: #d0d0d0; /* Premium text readability */
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+.about-p:first-child {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 20px;
+}
+
+/* Modernize Stats Cards */
+.section-about-me .card-core-service {
+    padding: 2.5rem 1.5rem;
+    background: #252525;
+    border: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-about-me .card-core-service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.section-about-me .highlight-core {
+    background: var(--accent-color);
+    box-shadow: 0 0 40px rgba(229, 9, 20, 0.2);
+}
+
+.section-about-me .stat-number {
+    font-size: clamp(3rem, 4vw, 4.5rem);
+    color: var(--accent-color);
+    margin-bottom: 0;
+    line-height: 1;
+    font-family: var(--font-family-1);
+    font-weight: 500;
+}
+
+.section-about-me .card-core-service.text-white-number .stat-number,
+.section-about-me .highlight-core .stat-number {
+    color: #ffffff;
+}
+
+.section-about-me .stat-label {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--font-family-1);
+}

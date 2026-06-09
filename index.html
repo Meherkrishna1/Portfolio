@@ -65,17 +65,17 @@
                                     <p>Transforming raw footage into compelling stories. Worked with 50+ Brands, companies and startups to create highly engaging content.</p>
                                     <div class="d-flex flex-row flex-wrap align-items-center gspace-2 mt-3" id="tl-beat-badges">
                                         <div class="banner-exp-badge">
-                                            <span class="banner-exp-number">6+</span>
+                                            <span class="banner-exp-number"><span data-count="6">0</span>+</span>
                                             <span class="banner-exp-label">Years<br>Experience</span>
                                         </div>
                                         <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
                                         <div class="banner-exp-badge">
-                                            <span class="banner-exp-number">100+</span>
+                                            <span class="banner-exp-number"><span data-count="100">0</span>+</span>
                                             <span class="banner-exp-label">Projects<br>Delivered</span>
                                         </div>
                                         <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
                                         <div class="banner-exp-badge">
-                                            <span class="banner-exp-number">50+</span>
+                                            <span class="banner-exp-number"><span data-count="50">0</span>+</span>
                                             <span class="banner-exp-label">Brands &<br>Creators</span>
                                         </div>
                                     </div>
@@ -127,93 +127,77 @@
 
         <!-- About Me Section -->
         <div id="section-about"></div>
-        <section class="section-core-service">
-            <div class="hero-container overflow-visible">
-                <div class="d-flex flex-column gspace-5 position-relative">
-
-                    <div class="core-service-heading-container mb-5">
-                        <div class="core-heading-container position-relative">
-                            <h2 class="core-service-heading heading-fill position-relative z-2">
-                                ABOUT ME
-                            </h2>
-                            <p class="text-uppercase mt-2" style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px;">The Creative Mind Behind the Lens</p>
+        <section class="section-about-me position-relative overflow-hidden pt-5 pb-5" id="section-about">
+            <div class="hero-container position-relative z-2">
+                <!-- Main Content Area: Two-Column Layout with Integrated Grid -->
+                <div class="row g-5 align-items-center">
+                    
+                    <!-- Left Column: Biography & Stats -->
+                    <div class="col-lg-7 reveal" style="--reveal-delay: 0ms">
+                        <!-- Name Block matching the mockup -->
+                        <div class="about-name-block">
+                            <h2 style="color: #ffffff; font-family: var(--font-family-1), Impact, sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: clamp(2rem, 3.8vw, 4.5rem); font-weight: 900; margin-bottom: 10px; line-height: 0.9; white-space: nowrap;">MEHER KRISHNA BHERI</h2>
+                            <h3 class="mb-5 mt-2" style="color: var(--accent-color); font-family: var(--font-family-2); font-weight: 700; font-size: clamp(0.9rem, 1.3vw, 1.15rem); letter-spacing: 3px; text-transform: uppercase;">VIDEO EDITOR &bull; CREATIVE DIRECTOR &bull; STORYTELLER</h3>
                         </div>
-                    </div>
+                        
+                        <div class="core-service-description mb-5">
+                            <p class="about-p">
+                                I take a story-first approach to creative problem solving. I collaborate with brands, creators, and businesses to build visual experiences that don't just look cinematic, but actively connect with viewers and deliver meaningful results.
+                            </p>
+                            <p class="about-p mb-0">
+                                Every project starts with a story. Whether it's a brand film, YouTube documentary, commercial campaign, or social media content, my goal is to create visuals that capture attention and leave a lasting impression.
+                            </p>
+                        </div>
 
-                    <!-- 2-column layout: Stats grid left, Biography right -->
-                    <div class="row position-relative z-2 gx-5 mt-4">
-                        <!-- Left Column: 2x2 Stat Grid -->
-                        <div class="col-lg-5 col-md-6 d-flex flex-column gspace-4 mt-lg-4">
-                            <div class="row g-3">
-                                <!-- Stat 1 -->
-                                <div class="col-6">
-                                    <div class="card card-core-service w-100 reveal" style="--reveal-delay: 0ms">
-                                        <div class="d-flex flex-column gspace-1">
-                                            <h3 style="font-size: clamp(1.8rem, 8vw, 3.8rem); color: var(--accent-color); margin-bottom: 0;">
-                                                <span data-count="100">0</span>+
-                                            </h3>
-                                            <h4 style="font-size: 0.95rem; margin-top: 4px; margin-bottom: 0; color: var(--primary); letter-spacing: 0.5px;">Projects Delivered</h4>
-                                        </div>
+                        <!-- 2x2 Stats Grid -->
+                        <div class="row row-cols-2 g-4 mt-2">
+                            <!-- Stat 1 -->
+                            <div class="col">
+                                <div class="card card-core-service h-100">
+                                    <div class="d-flex flex-column gspace-1">
+                                        <h3 class="stat-number"><span data-count="100">0</span>+</h3>
+                                        <h4 class="stat-label">Projects Delivered</h4>
                                     </div>
                                 </div>
-                                <!-- Stat 2 -->
-                                <div class="col-6">
-                                    <div class="card card-core-service w-100 reveal" style="--reveal-delay: 100ms">
-                                        <div class="d-flex flex-column gspace-1">
-                                            <h3 style="font-size: clamp(1.8rem, 8vw, 3.8rem); color: var(--primary); margin-bottom: 0;">
-                                                <span data-count="50">0</span>+
-                                            </h3>
-                                            <h4 style="font-size: 0.95rem; margin-top: 4px; margin-bottom: 0; color: var(--primary); letter-spacing: 0.5px;">Brands & Creators</h4>
-                                        </div>
+                            </div>
+                            <!-- Stat 2 -->
+                            <div class="col">
+                                <div class="card card-core-service text-white-number h-100">
+                                    <div class="d-flex flex-column gspace-1">
+                                        <h3 class="stat-number"><span data-count="50">0</span>+</h3>
+                                        <h4 class="stat-label">Brands &amp; Creators</h4>
                                     </div>
                                 </div>
-                                <!-- Stat 3 (highlighted) -->
-                                <div class="col-6">
-                                    <div class="card card-core-service highlight-core w-100 reveal" style="--reveal-delay: 200ms">
-                                        <div class="d-flex flex-column gspace-1">
-                                            <h3 style="font-size: clamp(1.8rem, 8vw, 3.8rem); color: var(--primary); margin-bottom: 0;">
-                                                <span data-count="6">0</span>+
-                                            </h3>
-                                            <h4 style="font-size: 0.95rem; margin-top: 4px; margin-bottom: 0; color: var(--primary); letter-spacing: 0.5px;">Years Experience</h4>
-                                        </div>
+                            </div>
+                            <!-- Stat 3 (highlighted) -->
+                            <div class="col">
+                                <div class="card card-core-service highlight-core h-100">
+                                    <div class="d-flex flex-column gspace-1">
+                                        <h3 class="stat-number highlight"><span data-count="6">0</span>+</h3>
+                                        <h4 class="stat-label">Years Experience</h4>
                                     </div>
                                 </div>
-                                <!-- Stat 4 -->
-                                <div class="col-6">
-                                    <div class="card card-core-service w-100 reveal" style="--reveal-delay: 300ms">
-                                        <div class="d-flex flex-column gspace-1">
-                                            <h3 style="font-size: clamp(2.4rem, 4vw, 3.8rem); color: var(--accent-color); margin-bottom: 0;">
-                                                <span data-count="100">0</span>+
-                                            </h3>
-                                            <h4 style="font-size: 0.95rem; margin-top: 4px; margin-bottom: 0; color: var(--primary); letter-spacing: 0.5px;">Happy Clients</h4>
-                                        </div>
+                            </div>
+                            <!-- Stat 4 -->
+                            <div class="col">
+                                <div class="card card-core-service h-100">
+                                    <div class="d-flex flex-column gspace-1">
+                                        <h3 class="stat-number"><span data-count="20">0</span>M+</h3>
+                                        <h4 class="stat-label">Combined Views</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Right Column: Biography -->
-                        <div class="col-lg-5 col-md-6 d-flex flex-column gspace-4">
-                            <div class="core-service-description w-100 mb-3 pe-lg-4">
-                                <h3 style="color: var(--primary); text-transform: uppercase; margin-bottom: 28px;">My Professional Journey</h3>
-                                    <p class="reveal" style="--reveal-delay: 80ms; line-height: 1.85; border-left: 2px solid rgba(229,9,20,0.4); padding-left: 16px;">
-                                        I am Meher Krishna Bheri, a video editor and creative director. Every project starts with a story. Whether it's a brand film, YouTube documentary, commercial campaign, or social media content, my goal is simple: create visuals that capture attention and leave a lasting impression.
-                                    </p>
-                                    <p class="reveal" style="--reveal-delay: 180ms; line-height: 1.85;">
-                                        I take a story-first approach to creative problem solving. By deeply understanding a brand's core communication goals, I craft narratives that resonate. It's never just about cutting footage — it's about finding the right pacing, the perfect moment of tension, and the emotional hook that drives audience engagement.
-                                    </p>
-                                    <p class="reveal" style="--reveal-delay: 280ms; line-height: 1.85;">
-                                        Ultimately, my work is designed for long-term impact. I collaborate with brands, creators, and businesses to build visual experiences that don't just look cinematic, but actively connect with viewers, communicate ideas clearly, and deliver meaningful results.
-                                    </p>
-                                </div>
-                            </div>
+                    <!-- Right Column: Portrait Image -->
+                    <div class="col-lg-5 reveal" style="--reveal-delay: 300ms">
+                        <div class="about-image-wrapper">
+                            <div class="about-image-glow"></div>
+                            <img loading="lazy" src="./assets/images/meher-portrait.jpg.png" alt="Meher Krishna Bheri - Creative Director" class="img-fluid about-portrait">
                         </div>
                     </div>
-                </div>
 
-                <!-- Right Floating Image -->
-                <div class="core-service-image">
-                    <img loading="lazy" src="https://montra2.foxcreation.net/assets/images/young-guy-enjoying-taking-photos-3UJ8HB8.png" alt="Photographer working with camera" class="img-fluid">
                 </div>
             </div>
         </section>
@@ -237,11 +221,13 @@
                 <div class="portfolio-filters" id="portfolio-filters">
                     <button class="pf-btn pf-btn--active" data-filter="all">All Projects</button>
                     <button class="pf-btn" data-filter="brand-commercial">Brand &amp; Commercial</button>
-                    <button class="pf-btn" data-filter="corporate-business">Corporate &amp; Business</button>
-                    <button class="pf-btn" data-filter="creator-influencer">Creator &amp; Influencer</button>
+                    <button class="pf-btn" data-filter="short-form-content">Short Form Content</button>
+                    <button class="pf-btn" data-filter="creators-personal-brands">Creators &amp; Personal Brands</button>
                     <button class="pf-btn" data-filter="youtube-documentary">YouTube &amp; Documentary</button>
+                    <button class="pf-btn" data-filter="corporate-business">Corporate &amp; Business</button>
                     <button class="pf-btn" data-filter="real-estate">Real Estate</button>
-                    <button class="pf-btn" data-filter="travel-cinematic">Travel &amp; Cinematic</button>
+                    <button class="pf-btn" data-filter="travel-films">Travel Films</button>
+                    <button class="pf-btn" data-filter="special-projects">Special Projects</button>
                 </div>
 
                 <!-- Project Grid -->
@@ -265,9 +251,6 @@
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> Product Commercial
                                 </span>
-                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
-                                    View Project <i class="fa-solid fa-arrow-right"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -290,15 +273,12 @@
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> Property Film
                                 </span>
-                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
-                                    View Project <i class="fa-solid fa-arrow-right"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 3: The Wandering Frame -->
-                    <div class="portfolio-card" data-category="travel-cinematic">
+                    <div class="portfolio-card" data-category="travel-films">
                         <div class="portfolio-card__thumb">
                             <div class="portfolio-card__bg" style="background-image: url('https://img.youtube.com/vi/Np4EN8ZPMFU/maxresdefault.jpg')"></div>
                             <div class="portfolio-card__overlay">
@@ -306,7 +286,7 @@
                                     <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
-                            <span class="portfolio-card__tag">Travel &amp; Cinematic</span>
+                            <span class="portfolio-card__tag">Travel Films</span>
                         </div>
                         <div class="portfolio-card__body">
                             <h4 class="portfolio-card__title">The Wandering Frame — Rajasthan</h4>
@@ -315,9 +295,6 @@
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> Travel Documentary
                                 </span>
-                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
-                                    View Project <i class="fa-solid fa-arrow-right"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -340,15 +317,12 @@
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> Corporate Brand Film
                                 </span>
-                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
-                                    View Project <i class="fa-solid fa-arrow-right"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 5: Aarav Vlogs — Channel Identity -->
-                    <div class="portfolio-card" data-category="creator-influencer">
+                    <div class="portfolio-card" data-category="creators-personal-brands">
                         <div class="portfolio-card__thumb">
                             <div class="portfolio-card__bg" style="background-image: url('https://img.youtube.com/vi/BCKMzk2rRKo/maxresdefault.jpg')"></div>
                             <div class="portfolio-card__overlay">
@@ -356,7 +330,7 @@
                                     <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
-                            <span class="portfolio-card__tag">Creator &amp; Influencer</span>
+                            <span class="portfolio-card__tag">Creators &amp; Personal Brands</span>
                         </div>
                         <div class="portfolio-card__body">
                             <h4 class="portfolio-card__title">Aarav Vlogs — Channel Rebrand</h4>
@@ -365,9 +339,6 @@
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> YouTube Editing
                                 </span>
-                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
-                                    View Project <i class="fa-solid fa-arrow-right"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -390,9 +361,6 @@
                                 <span class="portfolio-card__type">
                                     <i class="fa-solid fa-clapperboard"></i> YouTube Documentary
                                 </span>
-                                <a href="javascript:void(0)" class="portfolio-card__link" aria-label="View Project">
-                                    View Project <i class="fa-solid fa-arrow-right"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -449,7 +417,7 @@
                         <div class="svc-item svc-item--active" data-svc="1">
                             <div class="svc-item__inner">
                                 <span class="svc-item__index">01</span>
-                                <h3 class="svc-item__name">Video<br>Production</h3>
+                                <h3 class="svc-item__name">Brand &amp;<br>Commercial Films</h3>
                                 <span class="svc-item__arrow"><i class="fa-solid fa-arrow-right"></i></span>
                             </div>
                             <div class="svc-item__bar"></div>
@@ -459,7 +427,7 @@
                         <div class="svc-item" data-svc="2">
                             <div class="svc-item__inner">
                                 <span class="svc-item__index">02</span>
-                                <h3 class="svc-item__name">Video<br>Editing</h3>
+                                <h3 class="svc-item__name">YouTube &amp;<br>Documentary Editing</h3>
                                 <span class="svc-item__arrow"><i class="fa-solid fa-arrow-right"></i></span>
                             </div>
                             <div class="svc-item__bar"></div>
@@ -469,7 +437,7 @@
                         <div class="svc-item" data-svc="3">
                             <div class="svc-item__inner">
                                 <span class="svc-item__index">03</span>
-                                <h3 class="svc-item__name">Script<br>Writing</h3>
+                                <h3 class="svc-item__name">Short Form<br>Content</h3>
                                 <span class="svc-item__arrow"><i class="fa-solid fa-arrow-right"></i></span>
                             </div>
                             <div class="svc-item__bar"></div>
@@ -479,7 +447,7 @@
                         <div class="svc-item" data-svc="4">
                             <div class="svc-item__inner">
                                 <span class="svc-item__index">04</span>
-                                <h3 class="svc-item__name">Motion<br>Graphics</h3>
+                                <h3 class="svc-item__name">Motion Graphics<br>&amp; Visual Design</h3>
                                 <span class="svc-item__arrow"><i class="fa-solid fa-arrow-right"></i></span>
                             </div>
                             <div class="svc-item__bar"></div>
@@ -489,7 +457,7 @@
                         <div class="svc-item" data-svc="5">
                             <div class="svc-item__inner">
                                 <span class="svc-item__index">05</span>
-                                <h3 class="svc-item__name">Sound<br>Design</h3>
+                                <h3 class="svc-item__name">Creative Direction<br>&amp; Story Development</h3>
                                 <span class="svc-item__arrow"><i class="fa-solid fa-arrow-right"></i></span>
                             </div>
                             <div class="svc-item__bar"></div>
@@ -502,14 +470,14 @@
 
                         <!-- Panel 1 -->
                         <div class="svc-panel__item svc-panel__item--active" data-panel="1">
-                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_video_production_1780930808933.png')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_brand_commercial_1781007768016.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Creating compelling visual content that brings ideas, brands and stories to life.</p>
+                                <p class="svc-panel__desc">Creating commercials, advertisements and branded content designed to capture attention and drive results.</p>
                                 <ul class="svc-panel__capabilities">
-                                    <li><i class="fa-solid fa-circle-dot"></i> Commercial Videos</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Brand Films</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Corporate Content</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Event Coverage</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Commercial editing</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Product videos</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Campaign videos</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Social ads</li>
                                 </ul>
                                 <a href="#contact-section" class="svc-panel__cta">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
@@ -517,14 +485,14 @@
 
                         <!-- Panel 2 -->
                         <div class="svc-panel__item" data-panel="2">
-                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_video_editing_1780930822667.png')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_youtube_documentary_1781007779761.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Transforming raw footage into engaging stories that keep audiences watching.</p>
+                                <p class="svc-panel__desc">Story driven editing that improves retention, pacing and audience engagement.</p>
                                 <ul class="svc-panel__capabilities">
-                                    <li><i class="fa-solid fa-circle-dot"></i> YouTube Videos</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Documentary Edits</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Social Media Content</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Promotional Videos</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Long-form YouTube</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Documentaries</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Interviews</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Educational content</li>
                                 </ul>
                                 <a href="#contact-section" class="svc-panel__cta">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
@@ -532,14 +500,14 @@
 
                         <!-- Panel 3 -->
                         <div class="svc-panel__item" data-panel="3">
-                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_script_writing_1780930836210.png')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_short_form_1781007793849.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Building strong narratives that connect with viewers and communicate ideas clearly.</p>
+                                <p class="svc-panel__desc">High-performing content optimized for Instagram Reels, TikTok and YouTube Shorts.</p>
                                 <ul class="svc-panel__capabilities">
-                                    <li><i class="fa-solid fa-circle-dot"></i> Brand Storytelling</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Commercial Concepts</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Video Scripting</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Content Planning</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Reels</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Shorts</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Social clips</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Repurposed content</li>
                                 </ul>
                                 <a href="#contact-section" class="svc-panel__cta">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
@@ -547,14 +515,14 @@
 
                         <!-- Panel 4 -->
                         <div class="svc-panel__item" data-panel="4">
-                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_motion_graphics_1780930849220.png')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_motion_graphics_1781007806704.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Enhancing visual storytelling through animation, motion design and creative visuals.</p>
+                                <p class="svc-panel__desc">Custom animations and graphics that elevate production quality and strengthen brand identity.</p>
                                 <ul class="svc-panel__capabilities">
-                                    <li><i class="fa-solid fa-circle-dot"></i> Titles &amp; Lower Thirds</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Animated Explainers</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Logo Animation</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Visual Effects Integration</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Motion graphics</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Logo animation</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Titles</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Explainers</li>
                                 </ul>
                                 <a href="#contact-section" class="svc-panel__cta">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
@@ -562,14 +530,14 @@
 
                         <!-- Panel 5 -->
                         <div class="svc-panel__item" data-panel="5">
-                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_sound_design_1780930862756.png')"></div>
+                            <div class="svc-panel__bg" style="background-image: url('./assets/images/service_creative_direction_1781007820878.png')"></div>
                             <div class="svc-panel__content">
-                                <p class="svc-panel__desc">Crafting immersive audio experiences that elevate every frame and strengthen impact.</p>
+                                <p class="svc-panel__desc">From concept to final delivery, shaping ideas into compelling visual stories.</p>
                                 <ul class="svc-panel__capabilities">
-                                    <li><i class="fa-solid fa-circle-dot"></i> Audio Cleanup</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Sound Effects</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Music Synchronisation</li>
-                                    <li><i class="fa-solid fa-circle-dot"></i> Final Audio Mastering</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Concept development</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Script consultation</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Story structure</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i> Creative strategy</li>
                                 </ul>
                                 <a href="#contact-section" class="svc-panel__cta">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
                             </div>

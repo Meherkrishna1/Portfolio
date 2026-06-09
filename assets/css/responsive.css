@@ -463,6 +463,12 @@
         justify-content: center;
     }
 
+    .about-portrait {
+        width: 85%;
+        margin: 0 auto;
+        display: block;
+    }
+
     /* 4. Services Section */
     .svc-panel, .svc-layout {
         height: auto !important;
