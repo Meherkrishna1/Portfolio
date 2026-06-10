@@ -477,7 +477,7 @@ function initTimelineScrollytelling() {
         return { el: document.getElementById(b.id), threshold: b.threshold };
     });
 
-    // ── Canvas sizing (HiDPI, contain fit) ──
+    // ── Canvas sizing (HiDPI, cover fit) ──
     var dpr        = window.devicePixelRatio || 1;
     var imgW       = 0;
     var imgH       = 0;
@@ -491,11 +491,11 @@ function initTimelineScrollytelling() {
         var canvasAspect = cw / ch;
         var dw, dh, dx, dy;
         if (imgAspect > canvasAspect) {
-            dw = cw;  dh = cw / imgAspect;
-            dx = 0;   dy = (ch - dh) / 2;
-        } else {
             dh = ch;  dw = ch * imgAspect;
             dy = 0;   dx = (cw - dw) / 2;
+        } else {
+            dw = cw;  dh = cw / imgAspect;
+            dx = 0;   dy = (ch - dh) / 2;
         }
         drawParams = { x: dx * dpr, y: dy * dpr, w: dw * dpr, h: dh * dpr };
     }
