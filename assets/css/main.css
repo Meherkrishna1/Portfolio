@@ -2892,12 +2892,14 @@ textarea.form-control-dark {
     transform: translateY(20px) !important;
     max-width: none !important;
     padding-bottom: 32px;
-    /* subtle gradient so text is readable over any frame */
+    padding-top: 60px; /* added padding to extend gradient */
+    /* enhanced gradient for better readability */
     background: linear-gradient(
         to top,
-        rgba(18, 18, 18, 0.96) 0%,
-        rgba(18, 18, 18, 0.80) 55%,
-        rgba(18, 18, 18, 0.0) 100%
+        rgba(0, 0, 0, 0.98) 0%,
+        rgba(0, 0, 0, 0.85) 45%,
+        rgba(0, 0, 0, 0.4) 80%,
+        rgba(0, 0, 0, 0.0) 100%
     );
 }
 
@@ -2911,6 +2913,7 @@ textarea.form-control-dark {
     width: 100%;
     padding-top: 48px;
 }
+
 
 /* Scroll hint anchored below the hero inner, centered */
 .tl-hero-scroll-hint {

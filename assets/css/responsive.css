@@ -432,6 +432,31 @@
        USER REQUESTED MOBILE OVERRIDES 
        ========================================= */
 
+    /* About Me Section Mobile Refinements */
+    .section-about-me .hero-container {
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+    
+    .mobile-intro-p {
+        padding-left: 12px !important;
+    }
+
+    .stat-card-custom {
+        padding: 20px 15px !important;
+    }
+    
+    .stat-card-custom h3 {
+        font-size: clamp(2.2rem, 8vw, 3rem) !important;
+    }
+    
+    .stat-card-custom h4 {
+        font-size: 10px !important;
+        letter-spacing: 0.5px !important;
+    }
+
+
+
     .container, .hero-container {
         width: 100%;
         overflow-x: hidden;

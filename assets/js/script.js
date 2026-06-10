@@ -242,6 +242,26 @@ function initScrollReveal() {
     allReveal.forEach(function (el) {
         observer.observe(el);
     });
+
+    // Dedicated observer for repeating reveal animations
+    const repeatObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                // Reset animation when out of view
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1, // Lower threshold to ensure it triggers even on smaller screens or taller containers
+        rootMargin: '50px 0px 50px 0px' // Trigger slightly before it fully enters
+    });
+
+    const allRepeatReveal = document.querySelectorAll('.reveal-repeat');
+    allRepeatReveal.forEach(function (el) {
+        repeatObserver.observe(el);
+    });
 }
 
 // ================================================
@@ -258,11 +278,11 @@ function initSwiper() {
                 slidesPerView: 'auto',
                 spaceBetween: 60,
                 loop: true,
-                speed: 3000,
+                speed: 5000,
                 autoplay: {
                     delay: 0,
                     disableOnInteraction: false,
-                    pauseOnMouseEnter: false
+                    pauseOnMouseEnter: true
                 },
                 freeMode: {
                     enabled: true,
@@ -705,60 +725,7 @@ function initTestimonialRail() {
     const rail = document.getElementById('testimonial-rail');
     if (!rail) return;
 
-    const cards = rail.querySelectorAll('.testimonial-card-wrap');
-    if (!cards.length) return;
-
-    // 1. Intersection Observer for Active State (Center of viewport)
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                cards.forEach(c => c.classList.remove('is-active'));
-                entry.target.classList.add('is-active');
-            }
-        });
-    }, {
-        root: rail,
-        rootMargin: '0px -49% 0px -49%', // Triggers exactly when crossing the center
-        threshold: 0
-    });
-
-    cards.forEach(card => observer.observe(card));
-
-    // 2. Mouse Drag to Scroll
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    rail.addEventListener('mousedown', (e) => {
-        isDown = true;
-        rail.classList.add('is-dragging');
-        startX = e.pageX - rail.offsetLeft;
-        scrollLeft = rail.scrollLeft;
-    });
-
-    rail.addEventListener('mouseleave', () => {
-        isDown = false;
-        rail.classList.remove('is-dragging');
-    });
-
-    rail.addEventListener('mouseup', () => {
-        isDown = false;
-        rail.classList.remove('is-dragging');
-    });
-
-    rail.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - rail.offsetLeft;
-        const walk = (x - startX) * 2; // 2x speed for smoother feel
-        rail.scrollLeft = scrollLeft - walk;
-    });
-
-    // 3. Mouse Wheel to Scroll horizontally
-    rail.addEventListener('wheel', (e) => {
-        if (e.deltaY !== 0) {
-            e.preventDefault();
-            rail.scrollLeft += e.deltaY;
-        }
-    });
+    // Clone the inner HTML to create a seamless infinite marquee
+    const originalContent = rail.innerHTML;
+    rail.innerHTML = originalContent + originalContent;
 }
