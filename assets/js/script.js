@@ -558,38 +558,46 @@ function initTimelineScrollytelling() {
         });
     }
 
-    // ── Preload all frames ──
+    // ── Preload frames optimally ──
     function preloadFrames(onComplete) {
-        var firstLoaded = false;
-        for (var i = 0; i < TOTAL_FRAMES; i++) {
-            (function(index) {
-                var img = new Image();
-                img.onload = function() {
-                    frames[index] = img;
-                    loaded++;
-                    // grab image dimensions from first loaded frame
-                    if (!imgW) {
-                        imgW = img.naturalWidth;
-                        imgH = img.naturalHeight;
-                        computeDrawParams();
-                    }
-                    // draw first frame as soon as it's ready
-                    if (!firstLoaded && index === 0) {
-                        firstLoaded = true;
-                        drawFrame(0);
-                    }
-                    if (loaded === TOTAL_FRAMES) {
-                        onComplete();
-                    }
-                };
-                img.onerror = function() {
-                    loaded++;
-                    if (loaded === TOTAL_FRAMES) onComplete();
-                };
-                img.src = framePath(index + 1);
-                frames[index] = img;
-            })(i);
-        }
+        var firstImg = new Image();
+        firstImg.onload = function() {
+            frames[0] = firstImg;
+            imgW = firstImg.naturalWidth;
+            imgH = firstImg.naturalHeight;
+            computeDrawParams();
+            
+            // Hide loader and make interactive immediately after frame 1
+            onComplete();
+            
+            // Sequentially load the rest in the background in batches of 5
+            var currentIndex = 1;
+            function loadNextBatch() {
+                var batchSize = Math.min(5, TOTAL_FRAMES - currentIndex);
+                if (batchSize <= 0) return;
+                
+                var batchLoaded = 0;
+                for (var i = 0; i < batchSize; i++) {
+                    (function(idx) {
+                        var img = new Image();
+                        img.onload = img.onerror = function() {
+                            frames[idx] = img;
+                            batchLoaded++;
+                            if (batchLoaded === batchSize) {
+                                currentIndex += batchSize;
+                                setTimeout(loadNextBatch, 10); // Let main thread breathe
+                            }
+                        };
+                        img.src = framePath(idx + 1);
+                    })(currentIndex + i);
+                }
+            }
+            loadNextBatch();
+        };
+        firstImg.onerror = function() {
+            onComplete(); // Fallback if frame 1 fails
+        };
+        firstImg.src = framePath(1);
     }
 
     // ── Init ──
