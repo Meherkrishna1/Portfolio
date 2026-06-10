@@ -409,11 +409,11 @@ function initContactForm() {
 // ================================================
 
 function initTimelineScrollytelling() {
-    var TOTAL_FRAMES = 119;
-    var FRAME_PATH_PREFIX = './timeline-frames/';
-    // frame filenames: 00001.jpg … 00119.jpg
+    var TOTAL_FRAMES = 81;
+    var FRAME_PATH_PREFIX = './timeline sequence v2/';
+    // frame filenames: timeline_sequence_new00.jpg … timeline_sequence_new80.jpg
     function framePath(i) {
-        return FRAME_PATH_PREFIX + String(i).padStart(5, '0') + '.jpg';
+        return FRAME_PATH_PREFIX + 'timeline_sequence_new' + String(i - 1).padStart(2, '0') + '.jpg';
     }
 
     // ── DOM refs ──
