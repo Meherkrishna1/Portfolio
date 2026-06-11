@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initContactForm();
     initPortfolioFilter();
     initServicePanel();
+    initCustomCursor();
+    initMagneticButtons();
 });
 
 // ================================================
@@ -728,4 +730,67 @@ function initTestimonialRail() {
     // Clone the inner HTML to create a seamless infinite marquee
     const originalContent = rail.innerHTML;
     rail.innerHTML = originalContent + originalContent;
+}
+
+// ================================================
+// 20. Custom Cursor (Awwwards Interaction)
+// ================================================
+
+function initCustomCursor() {
+    const cursor = document.getElementById('custom-cursor');
+    if (!cursor) return;
+
+    // Track mouse movement
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Hover states for Video/Portfolio thumbs
+    const videoThumbs = document.querySelectorAll('.portfolio-card__thumb');
+    videoThumbs.forEach(function(thumb) {
+        thumb.addEventListener('mouseenter', function() {
+            cursor.classList.add('play-mode');
+        });
+        thumb.addEventListener('mouseleave', function() {
+            cursor.classList.remove('play-mode');
+        });
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', function() {
+        cursor.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', function() {
+        cursor.style.opacity = '1';
+    });
+}
+
+// ================================================
+// 21. Magnetic Buttons
+// ================================================
+
+function initMagneticButtons() {
+    const magnets = document.querySelectorAll('.hero-btn, .btn');
+    
+    magnets.forEach(function(magnet) {
+        // Prevent conflict with default button animations if needed, 
+        // but adding transform translation usually layers well.
+        magnet.style.transition = 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, color 0.3s';
+        
+        magnet.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const h = rect.width / 2;
+            const w = rect.height / 2;
+            const x = e.clientX - rect.left - h;
+            const y = e.clientY - rect.top - w;
+            
+            // Limit magnetic pull to ~30% of movement
+            this.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+        });
+        
+        magnet.addEventListener('mouseleave', function() {
+            this.style.transform = 'translate(0px, 0px)';
+        });
+    });
 }
