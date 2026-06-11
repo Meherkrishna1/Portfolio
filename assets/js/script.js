@@ -1,5 +1,5 @@
 /**
- * Montra - Film & Video Production Studio
+ * Meher Krishna Bheri Portfolio
  * Main JavaScript
  */
 
@@ -158,7 +158,19 @@ function initCounters() {
         entries.forEach(function (entry) {
             if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
                 entry.target.classList.add('counted');
-                animateCounter(entry.target);
+                
+                // If the timeline loader is still active, wait for it to finish!
+                var loader = document.getElementById('tl-loader');
+                if (loader && !loader.classList.contains('tl-hidden')) {
+                    document.addEventListener('timelineReady', function() {
+                        // Small extra delay to allow the CSS fade-out to complete
+                        setTimeout(function() {
+                            animateCounter(entry.target);
+                        }, 500);
+                    }, { once: true });
+                } else {
+                    animateCounter(entry.target);
+                }
             }
         });
     }, { threshold: 0.3 });
@@ -632,6 +644,9 @@ function initTimelineScrollytelling() {
         if (loader) loader.classList.add('tl-hidden');
         drawFrame(0);
         onScroll(); // sync overlays to current scroll position
+
+        // Dispatch an event so counters know the hero section is visible!
+        document.dispatchEvent(new Event('timelineReady'));
     });
 }
 
