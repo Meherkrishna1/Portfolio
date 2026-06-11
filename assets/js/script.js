@@ -110,7 +110,7 @@ function initVideoModal() {
     const overlay    = document.getElementById('modal-overlay');
     const videoFrame = document.getElementById('my-video-frame');
     const closeBtn   = document.getElementById('modal-close-btn');
-    const playBtns   = document.querySelectorAll('.request-loader');
+    const playBtns   = document.querySelectorAll('.request-loader, .portfolio-card');
 
     if (!overlay || !videoFrame) return;
 
