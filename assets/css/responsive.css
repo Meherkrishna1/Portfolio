@@ -200,7 +200,7 @@
     }
 
     .partner-image {
-        max-height: 45px;
+        max-height: 90px;
     }
 
     /* Portfolio Showcase */
@@ -549,7 +549,7 @@
     .partner-image {
         max-width: 100%;
         height: auto !important;
-        max-height: 50px !important;
+        max-height: 80px !important;
         object-fit: contain;
     }
 

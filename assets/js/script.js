@@ -4,21 +4,155 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Start fetching and rendering portfolio cards
+    renderPortfolioCards().then(() => {
+        // Initialize components that depend on portfolio cards
+        initVideoModal();
+        initScrollReveal();
+        initPortfolioFilter();
+        initCustomCursor();
+    }).catch(err => {
+        console.error("Error loading portfolio cards:", err);
+    });
+
+    // Initialize all other independent components immediately
     initTimelineScrollytelling();
     initYouTubeAPI();
-    initVideoModal();
     initCounters();
-    initScrollReveal();
     initBackToTop();
     initSwiper();
     initTestimonialRail();
     initNewsletterForm();
     initContactForm();
-    initPortfolioFilter();
     initServicePanel();
-    initCustomCursor();
     initMagneticButtons();
 });
+
+// ================================================
+// 0. Render Portfolio Cards Dynamically
+// ================================================
+
+function getYouTubeId(url) {
+    if (!url) return '';
+    // Regex for youtu.be, youtube.com (watch, embed, v, vi, feeds, etc.)
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : '';
+}
+
+function parseCSV(text) {
+    const lines = [];
+    let row = [""];
+    let inQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const nextChar = text[i + 1];
+
+        if (char === '"') {
+            if (inQuotes && nextChar === '"') {
+                row[row.length - 1] += '"';
+                i++;
+            } else {
+                inQuotes = !inQuotes;
+            }
+        } else if (char === ',' && !inQuotes) {
+            row.push("");
+        } else if ((char === '\r' || char === '\n') && !inQuotes) {
+            if (char === '\r' && nextChar === '\n') {
+                i++;
+            }
+            lines.push(row);
+            row = [""];
+        } else {
+            row[row.length - 1] += char;
+        }
+    }
+    if (row.length > 1 || row[0] !== "") {
+        lines.push(row);
+    }
+    return lines;
+}
+
+async function renderPortfolioCards() {
+    const grid = document.getElementById('portfolio-grid');
+    if (!grid) return;
+    
+    let portfolioData = [];
+    
+    try {
+        const response = await fetch('./portfolio.csv');
+        if (!response.ok) throw new Error('Failed to load portfolio.csv');
+        const csvText = await response.text();
+        
+        const lines = parseCSV(csvText);
+        if (lines.length > 1) {
+            const headers = lines[0].map(h => h.trim().toLowerCase());
+            const titleIdx = headers.indexOf('title') !== -1 ? headers.indexOf('title') : 0;
+            const categoriesIdx = headers.indexOf('categories') !== -1 ? headers.indexOf('categories') : 1;
+            const tagsIdx = headers.indexOf('tags') !== -1 ? headers.indexOf('tags') : 2;
+            const youtubeUrlIdx = headers.indexOf('youtubeurl') !== -1 ? headers.indexOf('youtubeurl') : 3;
+            const featuredIdx = headers.indexOf('featured') !== -1 ? headers.indexOf('featured') : 4;
+            
+            for (let i = 1; i < lines.length; i++) {
+                const row = lines[i];
+                if (row.length < 2 || !row[titleIdx]) continue;
+                
+                const categories = (row[categoriesIdx] || '').split(',').map(c => c.trim()).filter(c => c.length > 0);
+                const tags = (row[tagsIdx] || '').split(',').map(t => t.trim()).filter(t => t.length > 0);
+                const youtubeUrl = (row[youtubeUrlIdx] || '').trim();
+                const featured = (row[featuredIdx] || '').trim().toUpperCase() === 'TRUE';
+                
+                portfolioData.push({ title: row[titleIdx].trim(), categories, tags, youtubeUrl, featured });
+            }
+        }
+    } catch (err) {
+        console.error("Error reading portfolio data:", err);
+        return;
+    }
+    
+    let html = '';
+    
+    // Create a sorted copy of the data, placing featured projects first
+    const sortedData = [...portfolioData].sort((a, b) => {
+        const aFeatured = a.featured === true ? 1 : 0;
+        const bFeatured = b.featured === true ? 1 : 0;
+        return bFeatured - aFeatured;
+    });
+    
+    sortedData.forEach(item => {
+        const videoId = getYouTubeId(item.youtubeUrl);
+        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        
+        const categoriesJson = JSON.stringify(item.categories).replace(/"/g, '&quot;');
+        let tagsHtml = `<div class="portfolio-card__tags-wrapper" style="position: absolute; top: 16px; left: 16px; z-index: 3; display: flex; gap: 6px; flex-wrap: wrap; pointer-events: none;">`;
+        if (item.tags && item.tags.length > 0) {
+            item.tags.forEach(tag => {
+                tagsHtml += `<span class="portfolio-card__tag" style="position: static; margin: 0; top: auto; left: auto;">${tag}</span>`;
+            });
+        }
+        tagsHtml += `</div>`;
+        
+        html += `
+        <div class="portfolio-card" data-categories="${categoriesJson}" data-video="${embedUrl}">
+            <div class="portfolio-card__thumb">
+                <div class="portfolio-card__bg" style="background-image: url('${thumbnailUrl}')"></div>
+                <div class="portfolio-card__overlay">
+                    <a href="javascript:void(0)" class="portfolio-card__play" aria-label="View Project">
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                </div>
+                ${tagsHtml}
+            </div>
+            <div class="portfolio-card__body">
+                <h4 class="portfolio-card__title">${item.title}</h4>
+            </div>
+        </div>`;
+    });
+    
+    grid.innerHTML = html;
+}
 
 // ================================================
 // 1. YouTube API Loader
@@ -303,11 +437,11 @@ function initSwiper() {
                     momentum: false
                 },
                 breakpoints: {
-                    320: { slidesPerView: 2, spaceBetween: 30 },
-                    576: { slidesPerView: 3, spaceBetween: 40 },
-                    768: { slidesPerView: 4, spaceBetween: 50 },
-                    992: { slidesPerView: 5, spaceBetween: 60 },
-                    1200: { slidesPerView: 6, spaceBetween: 70 }
+                    320: { slidesPerView: 2, spaceBetween: 15 },
+                    576: { slidesPerView: 3, spaceBetween: 20 },
+                    768: { slidesPerView: 4, spaceBetween: 25 },
+                    992: { slidesPerView: 5, spaceBetween: 30 },
+                    1200: { slidesPerView: 7, spaceBetween: 40 }
                 }
             });
         }
@@ -681,8 +815,15 @@ function initPortfolioFilter() {
             // Filter cards with a fade animation
             var delay = 0;
             cards.forEach(function (card) {
-                var cat = card.getAttribute('data-category');
-                if (filter === 'all' || cat === filter) {
+                var categoriesAttr = card.getAttribute('data-categories');
+                var categories = [];
+                try {
+                    if (categoriesAttr) categories = JSON.parse(categoriesAttr);
+                } catch(e) {}
+                
+                var isMatch = (filter === 'all') || categories.includes(filter);
+
+                if (isMatch) {
                     card.classList.remove('is-hidden');
                     card.style.animationDelay = delay + 'ms';
                     card.style.animation = 'none';
