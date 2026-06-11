@@ -61,42 +61,41 @@
                             <div class="d-flex flex-column flex-md-row gspace-2 justify-content-between align-items-start align-items-md-center mb-0">
                                 <div class="home-title-container">
                                     <h1 id="tl-beat-name">Meher Krishna Bheri</h1>
-                                    <p id="tl-beat-tagline" style="font-family: var(--font-family-2); font-size: 15px; color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; max-width: 420px;">Turning Ideas Into Visual Stories That Engage, Inspire & Convert</p>
+                                    <p id="tl-beat-tagline" class="hero-tagline" style="font-family: var(--font-family-2); font-size: 15px; color: var(--accent-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; max-width: 420px; margin-left: auto; margin-right: auto;">Turning Ideas Into Visual Stories <span class="hide-on-mobile">That Engage, Inspire & Convert</span></p>
                                 </div>
                                 <div class="home-avatar-container" id="tl-beat-desc">
-                                    <p>Helping brands, creators and businesses<br>turn ideas into stories people remember.</p>
+                                    <p class="hero-supporting-copy">Helping brands, creators and businesses<br>turn ideas into stories people remember.</p>
                                     <div class="d-flex flex-row flex-wrap align-items-center gspace-2 mt-3" id="tl-beat-badges">
                                         <div class="banner-exp-badge">
-                                            <span class="banner-exp-number"><span data-count="7">0</span>+</span>
-                                            <span class="banner-exp-label">Years<br>Experience</span>
+                                            <span class="banner-exp-number"><span data-count="7">0</span><span class="stat-plus">+</span></span>
+                                            <span class="banner-exp-label text-start">Years<br>Experience</span>
                                         </div>
-                                        <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
+                                        <div class="stat-divider" style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
                                         <div class="banner-exp-badge">
-                                            <span class="banner-exp-number"><span data-count="200">0</span>+</span>
-                                            <span class="banner-exp-label">Projects<br>Delivered</span>
+                                            <span class="banner-exp-number"><span data-count="200">0</span><span class="stat-plus">+</span></span>
+                                            <span class="banner-exp-label text-start">Projects<br>Delivered</span>
                                         </div>
-                                        <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
-                                        <div class="banner-exp-badge">
+                                        <div class="stat-divider hide-on-mobile" style="width: 1px; height: 40px; background: rgba(255,255,255,0.2);"></div>
+                                        <div class="banner-exp-badge hide-on-mobile">
                                             <span class="banner-exp-number"><span data-count="100">0</span>+</span>
                                             <span class="banner-exp-label">Brands &<br>Creators</span>
                                         </div>
                                     </div>
+                                    <div class="d-flex flex-row hero-btns-container mt-2" id="tl-beat-btns">
+                                        <a href="#section-projects" class="btn btn-accent hero-btn">
+                                            Video Portfolio
+                                        </a>
+                                        <a href="#contact-section" class="btn btn-outline-light hero-btn hero-btn-secondary">
+                                            Get in Touch
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Divider -->
-                            <div class="home-divider" id="tl-beat-divider"></div>
-                            <!-- Bottom row: buttons + social -->
-                            <div class="d-flex flex-column flex-md-row gspace-2 w-100 align-items-center justify-content-between">
-                                <div class="d-flex flex-row flex-wrap gspace-2" id="tl-beat-btns">
-                                    <a href="#section-projects" class="btn btn-accent">
-                                        Video Portfolio
-                                        <i class="fa-solid fa-film ms-2"></i>
-                                    </a>
-                                    <a href="#contact-section" class="btn btn-outline-light rounded-0 text-uppercase" style="font-weight: 900; font-family: var(--font-family-1); font-size: 18px; border: none !important;">
-                                        Get in Touch
-                                    </a>
-                                </div>
-                                <div class="d-flex flex-row flex-wrap gspace-2 align-items-center" id="tl-beat-social">
+                            <div class="home-divider hide-on-mobile" id="tl-beat-divider"></div>
+                            <!-- Bottom row: social -->
+                            <div class="d-flex flex-column flex-md-row w-100 align-items-center justify-content-end hero-bottom-row">
+                                <div class="d-flex flex-row flex-wrap align-items-center hero-social-container" id="tl-beat-social">
                                     <a href="https://www.instagram.com/meher_onemark" class="social-icon social-icon--circle" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                                     <a href="https://www.linkedin.com/" class="social-icon social-icon--circle" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                                     <a href="https://www.x.com/" class="social-icon social-icon--circle" target="_blank" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -1262,12 +1261,11 @@
                                             <label for="projectType">Project Type</label>
                                             <select class="form-select form-select-dark" id="projectType">
                                                 <option selected disabled>Select a service...</option>
-                                                <option value="video-editing">Video Editing</option>
-                                                <option value="video-production">Video Production</option>
-                                                <option value="motion-graphics">Motion Graphics</option>
-                                                <option value="color-grading">Color Grading</option>
-                                                <option value="sound-design">Sound Design</option>
-                                                <option value="social-content">Social Media Content</option>
+                                                <option value="brand-commercial-films">Brand &amp; Commercial Films</option>
+                                                <option value="youtube-documentary-editing">YouTube &amp; Documentary Editing</option>
+                                                <option value="short-form-content">Short Form Content</option>
+                                                <option value="motion-graphics-visual-design">Motion Graphics &amp; Visual Design</option>
+                                                <option value="creative-direction-story-development">Creative Direction &amp; Story Development</option>
                                                 <option value="other">Other</option>
                                             </select>
                                         </div>
